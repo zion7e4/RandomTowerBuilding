@@ -1,0 +1,58 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+public class BlockManager : MonoBehaviour
+{
+    public List<BlockData> blockPool; // ScriptableObject 리스트
+    public Transform spawnPoint; // 블럭 생성 위치
+
+    private Block currentBlock; // 현재 활성 블럭
+
+    // 새로운 블럭을 무작위로 생성하고 반환
+    public Block SpawnBlock()
+    {
+        // 예외 처리: pool 비었는지 확인
+        if (blockPool == null || blockPool.Count == 0)
+        {
+            Debug.LogError("BlockManager: blockPool이 비어 있습니다.");
+            return null;
+        }
+
+        // 무작위 블럭 선택
+        BlockData data = blockPool[Random.Range(0, blockPool.Count)];
+
+        // 예외 처리: 프리팹 연결 안 되어 있으면
+        if (data.prefab == null)
+        {
+            Debug.LogError($"BlockManager: BlockData '{data.blockName}'에 프리팹이 연결되어 있지 않습니다.");
+            return null;
+        }
+
+        // 프리팹 생성
+        GameObject obj = Instantiate(data.prefab, spawnPoint.position, Quaternion.identity);
+
+        // Block 스크립트 유효성 체크
+        currentBlock = obj.GetComponent<Block>();
+        if (currentBlock == null)
+        {
+            Debug.LogError($"BlockManager: 생성된 프리팹 '{data.prefab.name}'에 Block.cs가 없습니다.");
+            return null;
+        }
+
+        currentBlock.Init(data);
+        return currentBlock;
+    }
+
+    // 현재 블럭 낙하
+    public void DropCurrentBlock()
+    {
+        if (currentBlock != null)
+        {
+            currentBlock.ActivatePhysics();
+        }
+    }
+
+    public Block GetCurrentBlock() => currentBlock;
+
+    public void ClearCurrentBlock() => currentBlock = null;
+}
