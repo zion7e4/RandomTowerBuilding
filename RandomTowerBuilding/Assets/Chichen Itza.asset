@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cfc3f398136d4a4cba78082d5325fee, type: 3}
-  m_Name: Europe_EiffelTower
+  m_Name: Chichen Itza
   m_EditorClassIdentifier: 
-  id: Europe_EiffelTower
-  blockName: "\uC5D0\uD3A0\uD0D1"
-  height: 3.3
-  width: 1.24
-  density: 2.5
+  id: Chichen Itza
+  blockName: "\uCE58\uCCB8 \uC774\uD2B8\uC0AC"
+  height: 1
+  width: 1.8
+  density: 2.6
   gravityPower: 1
-  prefab: {fileID: 0}
+  prefab: {fileID: 8080510457393124816, guid: bdda798f109577d43a9d025647a8d55f, type: 3}
