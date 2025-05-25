@@ -20,7 +20,7 @@ public class Building_Movement : MonoBehaviour
     [SerializeField]
     private bool isStable = false;
     [SerializeField]
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     [SerializeField]
     private bool Spawnnextblock = false;
 
