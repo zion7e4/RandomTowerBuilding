@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Empire State Building_0: -7481210618132650065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

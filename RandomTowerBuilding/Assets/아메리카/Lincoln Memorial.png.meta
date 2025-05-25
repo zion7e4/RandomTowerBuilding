@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lincoln Memorial_0: -3716350983202038677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

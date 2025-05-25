@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      The Gateway Arch_0: 3638999323425052277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

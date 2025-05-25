@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      US Capitol_0: 1784667383260655792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
