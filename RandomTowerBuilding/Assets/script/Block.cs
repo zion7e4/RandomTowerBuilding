@@ -24,28 +24,52 @@ public class Block : MonoBehaviour
     // 외부에서 블럭 정보를 초기화할 때 호출
     public void Init(BlockData data)
     {
+        // Rigidbody2D 가져오기
         rb = GetComponent<Rigidbody2D>();
 
-        // 크기 설정 (비율 기반으로 스케일 조절)
+        // 스프라이트 크기 적용
         transform.localScale = new Vector3(data.width, data.height, 1f);
 
-        // 질량 = 가로 × 세로 × 질량 보정 계수
+        // 기존 콜라이더 제거 후 새로 생성
+        PolygonCollider2D oldCol = GetComponent<PolygonCollider2D>();
+        if (oldCol != null)
+        {
+            Destroy(oldCol); // 기존 콜라이더 제거
+        }
+
+        // 새 콜라이더 생성 (현재 스프라이트 + 스케일 기준으로 다시 만들어짐)
+        PolygonCollider2D newCol = gameObject.AddComponent<PolygonCollider2D>();
+
+        // 크기 적용 (BlockData 기준)
+        transform.localScale = new Vector3(data.width, data.height, 1f);
+
+        // 기존 콜라이더 제거 후 재생성
+        if (GetComponent<PolygonCollider2D>() != null)
+        {
+            Destroy(GetComponent<PolygonCollider2D>());
+        }
+
+        // 마찰력 적용
+        PhysicsMaterial2D mat = Resources.Load<PhysicsMaterial2D>("BlockFriction");
+        if (mat != null)
+        {
+            newCol.sharedMaterial = mat;
+        }
+
+        // 질량과 중력 설정
         rb.mass = data.height * data.width * data.density;
-
-        // 중력 영향도
         rb.gravityScale = data.gravityPower;
-
-        // 생성 직후에는 조작만 가능하게 설정 (중력 X)
+        rb.angularDamping = 2f;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
-        // 회전 초기 상태 저장
+        // 회전 및 상태 초기화
         targetAngle = transform.eulerAngles.z;
-
-        // 상태 초기화
         isStopped = false;
         hasDropped = false;
         stopTimer = 0f;
         dropTimer = 0f;
+
+        Debug.Log($"[Block Init] {data.blockName} - 크기({data.width}x{data.height}) / 밀도: {data.density} / 질량: {rb.mass}");
     }
 
     // 낙하 명령 → 물리 적용

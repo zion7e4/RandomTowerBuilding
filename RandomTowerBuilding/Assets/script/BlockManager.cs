@@ -20,6 +20,7 @@ public class BlockManager : MonoBehaviour
 
         // 무작위 블럭 선택
         BlockData data = blockPool[Random.Range(0, blockPool.Count)];
+        Debug.Log("생성된 블럭: " + data.blockName);
 
         // 예외 처리: 프리팹 연결 안 되어 있으면
         if (data.prefab == null)

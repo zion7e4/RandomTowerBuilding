@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfc3f398136d4a4cba78082d5325fee, type: 3}
+  m_Name: USCapitol
+  m_EditorClassIdentifier: 
+  id: USCapitol
+  blockName: "\uAD6D\uD68C\uC758\uC0AC\uB2F9"
+  height: 2.1
+  width: 2.4
+  density: 1.6
+  gravityPower: 1
+  prefab: {fileID: 8080510457393124816, guid: fa6a6844b16125946aec4251447be084, type: 3}
