@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4859378530015917398}
   - component: {fileID: 8184256438720278495}
   - component: {fileID: 5524192767663256960}
+  - component: {fileID: -3240147389349627053}
   m_Layer: 0
   m_Name: BuildingPrefab2
   m_TagString: Block
@@ -104,6 +105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   rotateSpeed: 30
+  isControllable: 1
+  isStable: 0
+  isGrounded: 0
+  Spawnnextblock: 0
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
 --- !u!50 &8184256438720278495
 Rigidbody2D:
@@ -178,3 +183,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-3240147389349627053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511855846078053027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

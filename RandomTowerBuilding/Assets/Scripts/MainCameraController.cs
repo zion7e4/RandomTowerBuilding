@@ -26,11 +26,14 @@ public class MainCameraController : MonoBehaviour
         if (highestBlock == null) return;
 
         float targetY = highestBlock.position.y + yOffset;
-        if (targetY > transform.position.y)
+        /*if (targetY > transform.position.y)
         {
             Vector3 targetPosition = new Vector3(transform.position.x, targetY, transform.position.z);
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        }
+        }*/
+
+        Vector3 targetPosition = new Vector3(transform.position.x, targetY, transform.position.z);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
         float targetFOV = Mathf.Lerp(baseFOV, zoomOutFOV, highestBlock.position.y / 100f);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);

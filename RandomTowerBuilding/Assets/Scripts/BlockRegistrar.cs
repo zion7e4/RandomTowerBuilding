@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BlockSpawn : MonoBehaviour
+public class BlockRegistrar : MonoBehaviour
 {
     void Start()
     {
