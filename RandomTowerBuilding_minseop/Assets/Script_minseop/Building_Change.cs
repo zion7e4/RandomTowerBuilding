@@ -5,7 +5,7 @@ public class Building_Change : MonoBehaviour
 
     public GameObject[] blockPrefabs; // 블록 프리팹 배열
     public Transform spawnPoint; // 블록 생성 위치
-   
+
     public GameObject currentBlock;
     private int remainingSwaps = 2; // 바꾸기 가능 횟수
 

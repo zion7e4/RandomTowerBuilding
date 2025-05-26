@@ -427,12 +427,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -470,6 +482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6176048340076563880, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: BM
       value: 
@@ -477,6 +493,14 @@ PrefabInstance:
     - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: BM.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: offsetDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: thresholdHeight
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: 'BM.Array.data[0]'
