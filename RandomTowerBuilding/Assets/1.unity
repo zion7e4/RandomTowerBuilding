@@ -499,6 +499,15 @@ MonoBehaviour:
   blockPool:
   - {fileID: 11400000, guid: 5b9da2ae9285cae4ebb89888a464bfe5, type: 2}
   - {fileID: 11400000, guid: 1bead664c8fe68e43bff55e94f35bc12, type: 2}
+  - {fileID: 11400000, guid: c3dfde2c5427d694d8d69dd560d70327, type: 2}
+  - {fileID: 11400000, guid: b47249792c6c56a4d80ec73b6d1d32ab, type: 2}
+  - {fileID: 11400000, guid: 17924c90582d1bc40af5a18305e18a24, type: 2}
+  - {fileID: 11400000, guid: ee00ccd06bb3e05479c87b2591d6e391, type: 2}
+  - {fileID: 11400000, guid: 7081e230e2c38d84f8e31014bff1f4ad, type: 2}
+  - {fileID: 11400000, guid: d78e747b376582843989b1542c426ff7, type: 2}
+  - {fileID: 11400000, guid: fe40f75938c608d4da6018c3bbfa748b, type: 2}
+  - {fileID: 11400000, guid: 72afda19afd5cea4a9008e373afc3f34, type: 2}
+  - {fileID: 11400000, guid: e1350e20a5c29f84cb7f0f15e64402d8, type: 2}
   spawnPoint: {fileID: 8636317}
 --- !u!4 &1399343091
 Transform:
