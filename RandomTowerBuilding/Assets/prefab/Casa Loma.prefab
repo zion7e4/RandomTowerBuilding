@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8550859838073374687}
   - component: {fileID: 657945630593837937}
-  - component: {fileID: -2151015635849856894}
   - component: {fileID: 4478492754621850317}
   - component: {fileID: 4224862837625486445}
+  - component: {fileID: 8643280939602066971}
+  - component: {fileID: 8296715877106379268}
   m_Layer: 0
   m_Name: Casa Loma
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,18 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2151015635849856894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080510457393124816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523b50da720538540af1fad2fe84443e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &4478492754621850317
 Rigidbody2D:
   serializedVersion: 5
@@ -117,7 +106,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -366,3 +355,34 @@ PolygonCollider2D:
       - {x: -0.878, y: -0.062000003}
       - {x: -0.882, y: -0.058000002}
   m_UseDelaunayMesh: 0
+--- !u!114 &8643280939602066971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080510457393124816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8296715877106379268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080510457393124816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf914b8c3ad9604080c3aed6e1741cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  rotateSpeed: 30
+  isControllable: 1
+  isStable: 1
+  isGrounded: 0
+  Spawnnextblock: 0
+  buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}

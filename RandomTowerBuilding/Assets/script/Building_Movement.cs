@@ -29,6 +29,7 @@ public class Building_Movement : MonoBehaviour
     private void Start()
     {
         rigid2D = GetComponent<Rigidbody2D>();
+        buildingchange = FindObjectOfType<Building_Change>();
     }
 
     private void Update()

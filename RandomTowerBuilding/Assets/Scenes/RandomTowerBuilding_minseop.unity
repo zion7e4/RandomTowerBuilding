@@ -272,8 +272,8 @@ MonoBehaviour:
   yOffset: 5
   smoothTime: 0.4
   zoomOutFOV: 120
-  baseFOV: 80
-  fovLerpSpeed: 2
+  baseFOV: 60
+  fovLerpSpeed: 5
   allBlocks: []
 --- !u!1 &1881845224
 GameObject:
@@ -404,8 +404,8 @@ Transform:
   m_GameObject: {fileID: 1881845224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 1}
+  m_LocalPosition: {x: 0.2211, y: -3, z: 0}
+  m_LocalScale: {x: 9.3526745, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bec782167fc7e04c85a7ff76a61d4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSize: 10
+  baseSize: 5
   maxSize: 40
   sizeLerpSpeed: 2
   allBlocks: []
@@ -576,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 1975859165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

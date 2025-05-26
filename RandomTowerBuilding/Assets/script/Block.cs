@@ -99,6 +99,7 @@ public class Block : MonoBehaviour
     // 매 프레임마다 실행
     void Update()
     {
+        if (rb == null) return; // Rigidbody2D가 없으면 무시
         // 부드러운 회전 처리
         if (!hasDropped)
         {
