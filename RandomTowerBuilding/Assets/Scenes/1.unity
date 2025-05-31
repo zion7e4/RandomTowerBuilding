@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 0}
-  fallLimitY: -5
+  fallLimitY: -15
 --- !u!114 &1221162253
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     // --- 내부 상태 변수 ---
     private bool isGameOver = false;
     private List<Transform> activeBlocks = new(); // 감시 대상 블록들
-    public float fallLimitY = -5f;                // Y값 기준선. 아래로 떨어지면 오버 처리됨
+    public float fallLimitY = -15f;                // Y값 기준선. 아래로 떨어지면 오버 처리됨
 
     void Awake()
     {
