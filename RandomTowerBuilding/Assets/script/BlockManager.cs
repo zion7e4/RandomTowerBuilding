@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class BlockManager : MonoBehaviour
+/*public class BlockManager : MonoBehaviour
 {
     public List<BlockData> blockPool; // ScriptableObject 리스트
     public Transform spawnPoint; // 블럭 생성 위치
@@ -76,4 +76,4 @@ public class BlockManager : MonoBehaviour
     public Block GetCurrentBlock() => currentBlock;
 
     public void ClearCurrentBlock() => currentBlock = null;
-}
+}*/

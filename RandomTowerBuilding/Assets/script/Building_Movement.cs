@@ -76,7 +76,7 @@ public class Building_Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isControllable = false;
-            rigid2D.gravityScale = 1.0f;
+            rigid2D.gravityScale = data.gravityPower;
         }
     }
 
@@ -113,13 +113,6 @@ public class Building_Movement : MonoBehaviour
     {
         Spawnnextblock = true;
         buildingchange.SpawnNewBlock();
-    }
-
-    public float getBlockLength()
-    {
-        float rotationZ = transform.eulerAngles.z;
-        bool isVertical = Mathf.Abs(rotationZ % 180) < 0.1;
-        return isVertical ? data.height : data.width;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

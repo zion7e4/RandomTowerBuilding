@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI blockCountText;
     public TextMeshProUGUI heightText;
+    Building_Change bc;
 
     [Header("기준 지면 (floor)")]
     public Transform floor;
@@ -14,14 +15,11 @@ public class ScoreManager : MonoBehaviour
     [Header("목표값 (클리어 조건)")]
     public int targetBlockCount = 15;
     public float targetHeight = 15f;
-
-    private int blockCount = 0;
     private float maxHeight = 0f;
 
     /// 블록이 생성될 때 호출됨
     public void RegisterBlock(Transform block)
     {
-        blockCount++;
 
         float blockTop = block.position.y + (block.GetComponent<Renderer>().bounds.size.y / 2f);
         float baseY = floor.position.y;
@@ -36,20 +34,15 @@ public class ScoreManager : MonoBehaviour
     void UpdateUI()
     {
         if (blockCountText != null)
-            blockCountText.text = $"blockCount: {blockCount}";
+            blockCountText.text = $"blockCount: {bc.blockcount}";
 
         if (heightText != null)
             heightText.text = $"height: {maxHeight:F2}m";
     }
 
-    public bool CheckClearCondition()
-    {
-        return blockCount >= targetBlockCount || maxHeight >= targetHeight;
-    }
-
     public void ResetScore()
     {
-        blockCount = 0;
+        bc.blockcount = 0;
         maxHeight = 0f;
         UpdateUI();
     }
