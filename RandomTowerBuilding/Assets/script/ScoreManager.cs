@@ -1,0 +1,56 @@
+using UnityEngine;
+using TMPro;
+
+/// 생성된 블록의 개수와 최고 높이를 관리하고 UI에 표시함
+public class ScoreManager : MonoBehaviour
+{
+    [Header("UI")]
+    public TextMeshProUGUI blockCountText;
+    public TextMeshProUGUI heightText;
+
+    [Header("기준 지면 (floor)")]
+    public Transform floor;
+
+    [Header("목표값 (클리어 조건)")]
+    public int targetBlockCount = 15;
+    public float targetHeight = 15f;
+
+    private int blockCount = 0;
+    private float maxHeight = 0f;
+
+    /// 블록이 생성될 때 호출됨
+    public void RegisterBlock(Transform block)
+    {
+        blockCount++;
+
+        float blockTop = block.position.y + (block.GetComponent<Renderer>().bounds.size.y / 2f);
+        float baseY = floor.position.y;
+        float height = blockTop - baseY;
+
+        if (height > maxHeight)
+            maxHeight = height;
+
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        if (blockCountText != null)
+            blockCountText.text = $"blockCount: {blockCount}";
+
+        if (heightText != null)
+            heightText.text = $"height: {maxHeight:F2}m";
+    }
+
+    public bool CheckClearCondition()
+    {
+        return blockCount >= targetBlockCount || maxHeight >= targetHeight;
+    }
+
+    public void ResetScore()
+    {
+        blockCount = 0;
+        maxHeight = 0f;
+        UpdateUI();
+    }
+}

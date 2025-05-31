@@ -1,50 +1,59 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 
 public class BlockManager : MonoBehaviour
 {
-    public List<BlockData> blockPool; // ScriptableObject ¸®½ºÆ®
-    public Transform spawnPoint; // ºí·° »ı¼º À§Ä¡
+    public List<BlockData> blockPool; // ScriptableObject ë¦¬ìŠ¤íŠ¸
+    public Transform spawnPoint; // ë¸”ëŸ­ ìƒì„± ìœ„ì¹˜
 
-    private Block currentBlock; // ÇöÀç È°¼º ºí·°
+    private Block currentBlock; // í˜„ì¬ í™œì„± ë¸”ëŸ­
 
-    // »õ·Î¿î ºí·°À» ¹«ÀÛÀ§·Î »ı¼ºÇÏ°í ¹İÈ¯
+    public ScoreManager scoreManager; // âœ… ì ìˆ˜ ì‹œìŠ¤í…œ ì—°ê²°
+    public float spawnDelay = 0.5f;   // ë¸”ë¡ ë©ˆì¶˜ í›„ ë‹¤ìŒ ë¸”ë¡ ë”œë ˆì´
+
+    // ìƒˆë¡œìš´ ë¸”ëŸ­ì„ ë¬´ì‘ìœ„ë¡œ ìƒì„±í•˜ê³  ë°˜í™˜
     public Block SpawnBlock()
     {
-        // ¿¹¿Ü Ã³¸®: pool ºñ¾ú´ÂÁö È®ÀÎ
+        // ì˜ˆì™¸ ì²˜ë¦¬: pool ë¹„ì—ˆëŠ”ì§€ í™•ì¸
         if (blockPool == null || blockPool.Count == 0)
         {
-            Debug.LogError("BlockManager: blockPoolÀÌ ºñ¾î ÀÖ½À´Ï´Ù.");
+            Debug.LogError("BlockManager: blockPoolì´ ë¹„ì–´ ìˆìŠµë‹ˆë‹¤.");
             return null;
         }
 
-        // ¹«ÀÛÀ§ ºí·° ¼±ÅÃ
+        // ë¬´ì‘ìœ„ ë¸”ëŸ­ ì„ íƒ
         BlockData data = blockPool[Random.Range(0, blockPool.Count)];
-        Debug.Log("»ı¼ºµÈ ºí·°: " + data.blockName);
+        Debug.Log("ìƒì„±ëœ ë¸”ëŸ­: " + data.blockName);
 
-        // ¿¹¿Ü Ã³¸®: ÇÁ¸®ÆÕ ¿¬°á ¾È µÇ¾î ÀÖÀ¸¸é
+        // ì˜ˆì™¸ ì²˜ë¦¬: í”„ë¦¬íŒ¹ ì—°ê²° ì•ˆ ë˜ì–´ ìˆìœ¼ë©´
         if (data.prefab == null)
         {
-            Debug.LogError($"BlockManager: BlockData '{data.blockName}'¿¡ ÇÁ¸®ÆÕÀÌ ¿¬°áµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.");
+            Debug.LogError($"BlockManager: BlockData '{data.blockName}'ì— í”„ë¦¬íŒ¹ì´ ì—°ê²°ë˜ì–´ ìˆì§€ ì•ŠìŠµë‹ˆë‹¤.");
             return null;
         }
 
-        // ÇÁ¸®ÆÕ »ı¼º
+        // í”„ë¦¬íŒ¹ ìƒì„±
         GameObject obj = Instantiate(data.prefab, spawnPoint.position, Quaternion.identity);
 
-        // Block ½ºÅ©¸³Æ® À¯È¿¼º Ã¼Å©
+        // Block ìŠ¤í¬ë¦½íŠ¸ ìœ íš¨ì„± ì²´í¬
         currentBlock = obj.GetComponent<Block>();
         if (currentBlock == null)
         {
-            Debug.LogError($"BlockManager: »ı¼ºµÈ ÇÁ¸®ÆÕ '{data.prefab.name}'¿¡ Block.cs°¡ ¾ø½À´Ï´Ù.");
+            Debug.LogError($"BlockManager: ìƒì„±ëœ í”„ë¦¬íŒ¹ '{data.prefab.name}'ì— Block.csê°€ ì—†ìŠµë‹ˆë‹¤.");
             return null;
         }
 
         currentBlock.Init(data);
+        currentBlock.OnStopped = () =>
+        {
+            scoreManager.RegisterBlock(currentBlock.transform);
+            ClearCurrentBlock();
+            Invoke(nameof(SpawnBlock), spawnDelay);
+        };
+
         return currentBlock;
     }
-
-    // ÇöÀç ºí·° ³«ÇÏ
+    // í˜„ì¬ ë¸”ëŸ­ ë‚™í•˜
     public void DropCurrentBlock()
     {
         if (currentBlock != null)

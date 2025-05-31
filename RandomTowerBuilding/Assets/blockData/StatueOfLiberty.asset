@@ -15,7 +15,7 @@ MonoBehaviour:
   id: StatueOfLiberty
   blockName: "\uC790\uC720\uC758 \uC5EC\uC2E0\uC0C1"
   height: 2.8
-  width: 1
+  width: 2
   density: 2.2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: ecf5e81640f10b54fbab9e58223e57c8, type: 3}
