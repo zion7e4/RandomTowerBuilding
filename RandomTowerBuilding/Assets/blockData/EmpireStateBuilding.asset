@@ -15,7 +15,7 @@ MonoBehaviour:
   id: EmpireStateBuilding
   blockName: "\uC5E0\uD30C\uC774\uC5B4 \uC2A4\uD14C\uC774\uD2B8 \uBE4C\uB529"
   height: 3.5
-  width: 0.9
+  width: 1.8
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: d1b21f901e167444eab1d0654981d256, type: 3}

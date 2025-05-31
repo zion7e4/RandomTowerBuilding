@@ -15,7 +15,7 @@ MonoBehaviour:
   id: CNTower
   blockName: "CN\uD0C0\uC6CC"
   height: 3.5
-  width: 0.6
+  width: 1.2
   density: 1.5
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: a81cfd900237c664891481e623383bb3, type: 3}
