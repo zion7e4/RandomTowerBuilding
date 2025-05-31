@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: blockcount
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 0}
-  fallLimitY: -5
+  fallLimitY: -10
 --- !u!114 &1221162253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,22 +552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa56d27ba8a4c7545a9b52de96ef6ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockPool:
-  - {fileID: 11400000, guid: 5b9da2ae9285cae4ebb89888a464bfe5, type: 2}
-  - {fileID: 11400000, guid: 1bead664c8fe68e43bff55e94f35bc12, type: 2}
-  - {fileID: 11400000, guid: c3dfde2c5427d694d8d69dd560d70327, type: 2}
-  - {fileID: 11400000, guid: b47249792c6c56a4d80ec73b6d1d32ab, type: 2}
-  - {fileID: 11400000, guid: 17924c90582d1bc40af5a18305e18a24, type: 2}
-  - {fileID: 11400000, guid: ee00ccd06bb3e05479c87b2591d6e391, type: 2}
-  - {fileID: 11400000, guid: 7081e230e2c38d84f8e31014bff1f4ad, type: 2}
-  - {fileID: 11400000, guid: d78e747b376582843989b1542c426ff7, type: 2}
-  - {fileID: 11400000, guid: fe40f75938c608d4da6018c3bbfa748b, type: 2}
-  - {fileID: 11400000, guid: 72afda19afd5cea4a9008e373afc3f34, type: 2}
-  - {fileID: 11400000, guid: e1350e20a5c29f84cb7f0f15e64402d8, type: 2}
-  spawnPoint: {fileID: 0}
-  currentBlock: {fileID: 0}
-  scoreManager: {fileID: 1221162253}
-  spawnDelay: 0.5
 --- !u!4 &1221162255
 Transform:
   m_ObjectHideFlags: 0
@@ -1203,7 +1187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'height: 0m'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

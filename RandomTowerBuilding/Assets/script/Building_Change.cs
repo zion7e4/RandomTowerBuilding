@@ -17,6 +17,7 @@ public class Building_Change : MonoBehaviour
     [SerializeField]
     public int blockcount;
     private float previousHighestY = 0f; // 이전 최고 높이 기록
+    [SerializeField]
     private bool isFirstBlock = true; // 첫 번째 블록 여부를 추적
     [SerializeField]
     public float currentHeight;

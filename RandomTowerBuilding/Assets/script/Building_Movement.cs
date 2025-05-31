@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Building_Movement : MonoBehaviour
@@ -27,6 +27,9 @@ public class Building_Movement : MonoBehaviour
     private bool Spawnnextblock = false;
     [SerializeField]
     private bool hasStabilized = false;
+    [SerializeField]
+    private bool isFirstBlock = true;
+
     public Building_Change buildingchange;
     public BlockData data;
 
@@ -37,7 +40,7 @@ public class Building_Movement : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal"); //A, D / <-, -> Å° 
+        float x = Input.GetAxisRaw("Horizontal"); //A, D / <-, -> í‚¤ 
         float z = Input.GetAxisRaw("Vertical");
         if(isControllable)
         {
@@ -58,7 +61,7 @@ public class Building_Movement : MonoBehaviour
         }
     }
 
-    private void MoveTo(float x) //ÁÂ¿ì ÀÌµ¿
+    private void MoveTo(float x) //ì¢Œìš° ì´ë™
     {
         moveDirection = new Vector3(x, 0, 0);
 
@@ -85,15 +88,15 @@ public class Building_Movement : MonoBehaviour
     {
         if(rigid2D.linearVelocity.magnitude < 0.1 && Mathf.Abs(rigid2D.angularVelocity) < 1)
         {
-            stableTimer += Time.deltaTime; // ¾ÈÁ¤È­ ½Ã°£ Áõ°¡
+            stableTimer += Time.deltaTime; // ì•ˆì •í™” ì‹œê°„ ì¦ê°€
             if (stableTimer >= stabilityTime)
             {
-                StabilizeBlock(); // ºí·Ï ¾ÈÁ¤È­
+                StabilizeBlock(); // ë¸”ë¡ ì•ˆì •í™”
             }
         }
         else
         {
-            stableTimer = 0f; // ¾ÈÁ¤È­ ½Ã°£ ÃÊ±âÈ­
+            stableTimer = 0f; // ì•ˆì •í™” ì‹œê°„ ì´ˆê¸°í™”
         }
 
     }
@@ -102,12 +105,17 @@ public class Building_Movement : MonoBehaviour
     {
         if (hasStabilized) return;
         hasStabilized = true;
+
+
         rigid2D.isKinematic = true;
 
-        // Á¡¼ö µî·Ï
         if (ScoreManager.Instance != null)
-        {
             ScoreManager.Instance.RegisterBlock(this.transform);
+
+        if (!isCounted)
+        {
+            buildingchange.IncrementBlockCount();
+            isCounted = true;
         }
 
         SpawnNextBlock();
@@ -123,8 +131,12 @@ public class Building_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Block"))
         {
-            isGrounded = true;            
-            CheckStability();
+            isGrounded = true;
+            if (isFirstBlock)
+            {
+                StabilizeBlock();
+                isFirstBlock = false;
+            }
         }
     }
 }

@@ -4,6 +4,8 @@ using TMPro;
 /// 생성된 블록의 개수와 최고 높이를 관리하고 UI에 표시함
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance { get; private set; }
+
     [Header("UI")]
     public TextMeshProUGUI blockCountText;
     public TextMeshProUGUI heightText;
@@ -16,6 +18,26 @@ public class ScoreManager : MonoBehaviour
     public int targetBlockCount = 15;
     public float targetHeight = 15f;
     private float maxHeight = 0f;
+
+    void Update()
+    {
+        UpdateUI();
+    }
+
+    void Start()
+    {
+        bc = FindObjectOfType<Building_Change>();
+    }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     /// 블록이 생성될 때 호출됨
     public void RegisterBlock(Transform block)

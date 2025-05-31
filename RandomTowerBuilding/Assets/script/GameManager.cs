@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// 전체 게임의 흐름과 블록 조작, 게임 오버 조건을 관리하는 스크립트.
 
 public class GameManager : MonoBehaviour
@@ -18,8 +19,13 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         // 싱글턴 초기화
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
 
 
