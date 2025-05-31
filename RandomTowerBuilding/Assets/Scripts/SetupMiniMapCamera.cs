@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
-public class MiniMapCameraController : MonoBehaviour
+public class SetupMiniMapCamera: MonoBehaviour
 {
     public float baseSize = 5f;          // 가장 낮을 때 orthographicSize
     public float maxSize = 40f;           // 최대 orthographicSize

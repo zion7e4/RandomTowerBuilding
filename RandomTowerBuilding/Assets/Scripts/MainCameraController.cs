@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MainCameraController : MonoBehaviour
 {
+    public static MainCameraController Instance { get; private set; }
     public float yOffset = 5f;
     public float smoothTime = 0.4f;
     public float zoomOutFOV = 120f;
@@ -14,6 +15,17 @@ public class MainCameraController : MonoBehaviour
 
     // 블록들을 모두 등록해둘 리스트
     public List<Transform> allBlocks = new List<Transform>();
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -40,7 +52,7 @@ public class MainCameraController : MonoBehaviour
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);
     }
 
-    Transform GetHighestBlock()
+    public Transform GetHighestBlock()
     {
         if (allBlocks.Count == 0) return null;
 
