@@ -216,7 +216,6 @@ MonoBehaviour:
   isControllable: 1
   isStable: 0
   isCounted: 0
-  isCalc: 0
   isGrounded: 0
   Spawnnextblock: 0
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}

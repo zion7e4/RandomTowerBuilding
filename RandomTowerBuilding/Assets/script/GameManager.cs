@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     // --- 참조들 ---
-    public BlockManager blockManager;       // 블록 생성 및 관리
     public GameObject gameOverUI;
 
     // --- 내부 상태 변수 ---
@@ -23,44 +22,13 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    void Start()
-    {
-        SpawnAndListen(); // 첫 블록 생성 및 감시 시작
-    }
 
     void Update()
     {
-        // 블록 조작 처리
-        Block current = blockManager.GetCurrentBlock();
-        if (current != null && !isGameOver)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-                current.Move(Vector2.left * 0.5f);
-
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-                current.Move(Vector2.right * 0.5f);
-
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-                current.Rotate(15f); // 반시계 방향
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-                current.Rotate(-15f); // 시계 방향
-
-            if (Input.GetKeyDown(KeyCode.Return))
-                blockManager.DropCurrentBlock();
-        }
-
         if (!isGameOver)
             MonitorBlocksFall();
     }
-    /// 새 블록 생성 + 정지 감지 연결 + 오버 감시 등록
-    void SpawnAndListen()
-    {
-        Block newBlock = blockManager.SpawnBlock();
 
-        // 게임 오버 감시용으로 등록
-        RegisterBlock(newBlock.transform);
-    }
 
     /// 블록을 감시 대상에 추가함
     public void RegisterBlock(Transform block)
