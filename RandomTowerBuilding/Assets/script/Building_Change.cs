@@ -55,7 +55,7 @@ public class Building_Change : MonoBehaviour
         currentBlock = newData;
 
         // 블록 감시 대상 등록
-        GameManager.Instance.RegisterBlock(newBlock.transform);
+        GameManager.Instance.RegisterBlock(newData.transform);
 
         // 새 블록에 `Building_Movement` 연결
         Building_Movement movement = newData.GetComponent<Building_Movement>();
