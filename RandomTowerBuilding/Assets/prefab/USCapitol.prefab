@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 657945630593837937}
   - component: {fileID: 4478492754621850317}
   - component: {fileID: 4224862837625486445}
-  - component: {fileID: -8398508396540711370}
-  - component: {fileID: 6984076317936681139}
+  - component: {fileID: -8079918960015980076}
+  - component: {fileID: 4665375991819556329}
   m_Layer: 0
   m_Name: USCapitol
   m_TagString: Block
@@ -270,19 +270,7 @@ PolygonCollider2D:
       - {x: 1.2270001, y: -0.51600003}
       - {x: 1.189, y: -0.50200003}
   m_UseDelaunayMesh: 0
---- !u!114 &-8398508396540711370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080510457393124816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6984076317936681139
+--- !u!114 &-8079918960015980076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,9 +283,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  rotateSpeed: 30
+  rotateSpeed: 100
   isControllable: 1
   isStable: 0
+  isCounted: 0
+  isCalc: 0
   isGrounded: 0
   Spawnnextblock: 0
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+  data: {fileID: 11400000, guid: 72afda19afd5cea4a9008e373afc3f34, type: 2}
+--- !u!114 &4665375991819556329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080510457393124816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

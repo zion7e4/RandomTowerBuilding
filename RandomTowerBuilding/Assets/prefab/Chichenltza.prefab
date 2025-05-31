@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 657945630593837937}
   - component: {fileID: 4478492754621850317}
   - component: {fileID: 4224862837625486445}
-  - component: {fileID: 9136393944904763929}
-  - component: {fileID: -6186461133415363430}
+  - component: {fileID: 1275797134575099766}
+  - component: {fileID: -1802764348829805388}
   m_Layer: 0
   m_Name: Chichenltza
   m_TagString: Block
@@ -297,19 +297,7 @@ PolygonCollider2D:
       - {x: -1.143, y: -0.485}
       - {x: -1.0350001, y: -0.485}
   m_UseDelaunayMesh: 0
---- !u!114 &9136393944904763929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080510457393124816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-6186461133415363430
+--- !u!114 &1275797134575099766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,9 +310,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  rotateSpeed: 30
+  rotateSpeed: 100
   isControllable: 1
   isStable: 0
+  isCounted: 0
+  isCalc: 0
   isGrounded: 0
   Spawnnextblock: 0
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+  data: {fileID: 11400000, guid: 1bead664c8fe68e43bff55e94f35bc12, type: 2}
+--- !u!114 &-1802764348829805388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080510457393124816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,7 +16,7 @@ public class Building_Movement : MonoBehaviour
     private Vector3 rotationDirection;
 
     [SerializeField]
-    private bool isControllable = true;
+    public bool isControllable = true;
     [SerializeField]
     private bool isStable = false;
     [SerializeField]

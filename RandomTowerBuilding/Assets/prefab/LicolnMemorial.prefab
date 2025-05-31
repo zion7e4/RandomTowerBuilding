@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 657945630593837937}
   - component: {fileID: 4478492754621850317}
   - component: {fileID: 4224862837625486445}
-  - component: {fileID: 2546788493204842680}
-  - component: {fileID: 6122696240580817343}
+  - component: {fileID: 2728588294198284442}
+  - component: {fileID: 475704867666809455}
   m_Layer: 0
   m_Name: LicolnMemorial
   m_TagString: Block
@@ -199,19 +199,7 @@ PolygonCollider2D:
       - {x: 0.72200006, y: -0.24400002}
       - {x: 0.69600004, y: -0.23200001}
   m_UseDelaunayMesh: 0
---- !u!114 &2546788493204842680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080510457393124816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6122696240580817343
+--- !u!114 &2728588294198284442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,9 +212,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  rotateSpeed: 30
+  rotateSpeed: 100
   isControllable: 1
   isStable: 0
+  isCounted: 0
+  isCalc: 0
   isGrounded: 0
   Spawnnextblock: 0
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+  data: {fileID: 11400000, guid: ee00ccd06bb3e05479c87b2591d6e391, type: 2}
+--- !u!114 &475704867666809455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080510457393124816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

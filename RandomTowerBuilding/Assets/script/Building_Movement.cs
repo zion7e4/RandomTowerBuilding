@@ -20,16 +20,18 @@ public class Building_Movement : MonoBehaviour
     [SerializeField]
     private bool isStable = false;
     [SerializeField]
+    private bool isCounted = false;
+    [SerializeField]
     public bool isGrounded = false;
     [SerializeField]
     private bool Spawnnextblock = false;
 
     public Building_Change buildingchange;
+    public BlockData data;
 
     private void Start()
     {
         rigid2D = GetComponent<Rigidbody2D>();
-        buildingchange = FindObjectOfType<Building_Change>();
     }
 
     private void Update()
@@ -42,9 +44,16 @@ public class Building_Movement : MonoBehaviour
             Rotate(z);
             DropBlock();
         }
+
         if (isGrounded)
         {
             CheckStability();
+        }
+
+        if (isStable && !isCounted)
+        {
+            buildingchange.IncrementBlockCount();
+            isCounted = true;
         }
     }
 
@@ -104,6 +113,13 @@ public class Building_Movement : MonoBehaviour
     {
         Spawnnextblock = true;
         buildingchange.SpawnNewBlock();
+    }
+
+    public float getBlockLength()
+    {
+        float rotationZ = transform.eulerAngles.z;
+        bool isVertical = Mathf.Abs(rotationZ % 180) < 0.1;
+        return isVertical ? data.height : data.width;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

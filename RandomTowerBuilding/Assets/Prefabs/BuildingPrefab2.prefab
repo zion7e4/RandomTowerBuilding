@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4480617690742444770}
   - component: {fileID: 1878677079731776090}
+  - component: {fileID: -4859378530015917398}
   - component: {fileID: 8184256438720278495}
   - component: {fileID: 5524192767663256960}
   - component: {fileID: -3240147389349627053}
-  - component: {fileID: -4859378530015917398}
   m_Layer: 0
   m_Name: BuildingPrefab2
   m_TagString: Block
@@ -91,6 +91,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4859378530015917398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511855846078053027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf914b8c3ad9604080c3aed6e1741cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  rotateSpeed: 30
+  isControllable: 1
+  isStable: 0
+  isGrounded: 0
+  Spawnnextblock: 0
+  heightUnit: 2
+  widthUnit: 1
+  buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
 --- !u!50 &8184256438720278495
 Rigidbody2D:
   serializedVersion: 5
@@ -176,22 +197,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4859378530015917398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2511855846078053027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcf914b8c3ad9604080c3aed6e1741cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 5
-  rotateSpeed: 30
-  isControllable: 1
-  isStable: 0
-  isGrounded: 0
-  Spawnnextblock: 0
-  buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}

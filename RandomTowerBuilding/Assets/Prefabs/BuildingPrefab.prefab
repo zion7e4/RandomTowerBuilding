@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8205076684712845581}
   - component: {fileID: 3935523436559098660}
+  - component: {fileID: 36452650262402205}
   - component: {fileID: 415708706033874399}
   - component: {fileID: 1433795704099766662}
   - component: {fileID: -2580970464067879840}
-  - component: {fileID: 36452650262402205}
   m_Layer: 0
   m_Name: BuildingPrefab
   m_TagString: Block
@@ -91,6 +91,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &36452650262402205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150884630032863947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf914b8c3ad9604080c3aed6e1741cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  rotateSpeed: 30
+  isControllable: 1
+  isStable: 0
+  isGrounded: 0
+  Spawnnextblock: 0
+  heightUnit: 1
+  widthUnit: 4
+  buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
 --- !u!61 &415708706033874399
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,22 +197,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &36452650262402205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9150884630032863947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcf914b8c3ad9604080c3aed6e1741cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 5
-  rotateSpeed: 30
-  isControllable: 1
-  isStable: 0
-  isGrounded: 0
-  Spawnnextblock: 0
-  buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}

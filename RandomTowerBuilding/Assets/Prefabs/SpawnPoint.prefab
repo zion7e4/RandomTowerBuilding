@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102653834743667851}
   - component: {fileID: 7677082370003772297}
+  - component: {fileID: -2190465091730852906}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Ground
@@ -45,15 +46,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPrefabs:
-  - {fileID: 8080510457393124816, guid: bdda798f109577d43a9d025647a8d55f, type: 3}
-  - {fileID: 8080510457393124816, guid: f72b3fc7ab1b17845a51847b4d126006, type: 3}
-  - {fileID: 8080510457393124816, guid: b771253bfecc7bf468731665124a66fb, type: 3}
-  - {fileID: 8080510457393124816, guid: a81cfd900237c664891481e623383bb3, type: 3}
-  - {fileID: 8080510457393124816, guid: d1b21f901e167444eab1d0654981d256, type: 3}
-  - {fileID: 8080510457393124816, guid: 30041bfe150a01e448fbfc665822401a, type: 3}
-  - {fileID: 8080510457393124816, guid: 10b6954c461db03459257f7004ebbf07, type: 3}
-  - {fileID: 8080510457393124816, guid: ecf5e81640f10b54fbab9e58223e57c8, type: 3}
-  - {fileID: 8080510457393124816, guid: 38420a828a827aa43ab008f148010411, type: 3}
-  - {fileID: 8080510457393124816, guid: fa6a6844b16125946aec4251447be084, type: 3}
-  - {fileID: 8080510457393124816, guid: bec0b6b6ed223ef45b0a1c95d0a4245a, type: 3}
+  - {fileID: 9150884630032863947, guid: d73054cab0dbe6e4b9c30bb1188bf16e, type: 3}
+  - {fileID: 8117599444330551022, guid: ade609c59dffd9641bd8ca28e2a7a9d6, type: 3}
+  - {fileID: 2511855846078053027, guid: 1d15ddc3b0d746841a4b1818f8fe112f, type: 3}
   spawnPoint: {fileID: 1102653834743667851}
+  currentBlock: {fileID: 0}
+  remainingSwaps: 2
+  blockcount: 0
+  currentHeight: 0
+  spawnY: 0
+  totalUnit: 0
+--- !u!114 &-2190465091730852906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176048340076563880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441f46ef01d2d3e4abcd07b53ff538c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameClear: 0
+  bc: {fileID: 7677082370003772297}
