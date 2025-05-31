@@ -109,6 +109,8 @@ MonoBehaviour:
   isStable: 0
   isGrounded: 0
   Spawnnextblock: 0
+  heightUnit: 1
+  widthUnit: 4
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
 --- !u!61 &415708706033874399
 BoxCollider2D:

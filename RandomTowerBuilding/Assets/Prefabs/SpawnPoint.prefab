@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102653834743667851}
   - component: {fileID: 7677082370003772297}
+  - component: {fileID: -2190465091730852906}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Ground
@@ -49,3 +50,23 @@ MonoBehaviour:
   - {fileID: 8117599444330551022, guid: ade609c59dffd9641bd8ca28e2a7a9d6, type: 3}
   - {fileID: 2511855846078053027, guid: 1d15ddc3b0d746841a4b1818f8fe112f, type: 3}
   spawnPoint: {fileID: 1102653834743667851}
+  currentBlock: {fileID: 0}
+  remainingSwaps: 2
+  blockcount: 0
+  currentHeight: 0
+  spawnY: 0
+  totalUnit: 0
+--- !u!114 &-2190465091730852906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176048340076563880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441f46ef01d2d3e4abcd07b53ff538c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameClear: 0
+  bc: {fileID: 7677082370003772297}

@@ -634,6 +634,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: blockPrefabs.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: bdda798f109577d43a9d025647a8d55f, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: f72b3fc7ab1b17845a51847b4d126006, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: b771253bfecc7bf468731665124a66fb, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: a81cfd900237c664891481e623383bb3, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: d1b21f901e167444eab1d0654981d256, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: 30041bfe150a01e448fbfc665822401a, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: 10b6954c461db03459257f7004ebbf07, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: ecf5e81640f10b54fbab9e58223e57c8, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: 38420a828a827aa43ab008f148010411, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[9]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: fa6a6844b16125946aec4251447be084, type: 3}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: 'blockPrefabs.Array.data[10]'
+      value: 
+      objectReference: {fileID: 8080510457393124816, guid: bec0b6b6ed223ef45b0a1c95d0a4245a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8550859838073374687}
   - component: {fileID: 657945630593837937}
-  - component: {fileID: -2151015635849856894}
   - component: {fileID: 4478492754621850317}
   - component: {fileID: 4224862837625486445}
   - component: {fileID: -8743774134694439910}
+  - component: {fileID: -4271389668182317793}
   m_Layer: 0
   m_Name: TheGatewayArch
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,18 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2151015635849856894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080510457393124816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523b50da720538540af1fad2fe84443e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &4478492754621850317
 Rigidbody2D:
   serializedVersion: 5
@@ -319,9 +307,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  rotateSpeed: 30
+  rotateSpeed: 100
   isControllable: 1
   isStable: 0
+  isCounted: 0
+  isCalc: 0
   isGrounded: 0
   Spawnnextblock: 0
-  buildingchange: {fileID: 0}
+  buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+  data: {fileID: 11400000, guid: fe40f75938c608d4da6018c3bbfa748b, type: 2}
+--- !u!114 &-4271389668182317793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080510457393124816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a34b652ba589499328e73aa202339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

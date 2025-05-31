@@ -4,14 +4,23 @@ using UnityEngine;
 public class Building_Change : MonoBehaviour
 {
     MainCameraController mainCameraController;
+    Building_Movement bm;
     public GameObject[] blockPrefabs; // 블록 프리팹 배열
     public Transform spawnPoint; // 블록 생성 위치
 
     public GameObject currentBlock;
     [SerializeField]
     private int remainingSwaps = 2; // 바꾸기 가능 횟수
+    [SerializeField]
+    public int blockcount;
     private float previousHighestY = 0f; // 이전 최고 높이 기록
     private bool isFirstBlock = true; // 첫 번째 블록 여부를 추적
+    [SerializeField]
+    public float currentHeight;
+    [SerializeField]
+    private float spawnY;
+    [SerializeField]
+    private float towerHeight;
 
 
     private void Start()
@@ -62,8 +71,8 @@ public class Building_Change : MonoBehaviour
         Transform highestBlock = MainCameraController.Instance.GetHighestBlock();
         if (highestBlock == null) return;
 
-        float currentHeight = highestBlock.position.y;
-        float spawnY = spawnPoint.position.y;
+         currentHeight = highestBlock.position.y;
+         spawnY = spawnPoint.position.y;
 
         // 첫 번째 블록일 경우 스폰 포인트 조정 건너뜀
         if (isFirstBlock)
@@ -77,21 +86,26 @@ public class Building_Change : MonoBehaviour
         if (currentHeight > previousHighestY)
         {
             // 스폰 포인트 올리기
-            if (spawnY - currentHeight <= 4f)
+            if (spawnY - currentHeight <= 4.5f)
             {
-                spawnPoint.position = new Vector3(spawnPoint.position.x, currentHeight + 3f, spawnPoint.position.z);
+                spawnPoint.position = new Vector3(spawnPoint.position.x, currentHeight + 6f, spawnPoint.position.z);
             }
         }
         else if (currentHeight < previousHighestY)
         {
             // 스폰 포인트 낮추기
-            if (spawnY - currentHeight > 3f) 
+            if (spawnY - currentHeight > 6f) 
             {
-                spawnPoint.position = new Vector3(spawnPoint.position.x, currentHeight + 3f, spawnPoint.position.z);
+                spawnPoint.position = new Vector3(spawnPoint.position.x, currentHeight + 6f, spawnPoint.position.z);
             }
         }
 
         // 이전 최고 높이 업데이트
         previousHighestY = currentHeight;
+    }
+
+    public void IncrementBlockCount()
+    {
+        blockcount++;
     }
 }

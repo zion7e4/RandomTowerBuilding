@@ -51,6 +51,7 @@ public class MainCameraController : MonoBehaviour
 
         float targetFOV = Mathf.Lerp(baseFOV, zoomOutFOV, highestBlock.position.y / 100f);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);
+
     }
 
      public Transform GetHighestBlock()
@@ -70,12 +71,6 @@ public class MainCameraController : MonoBehaviour
             }
         }
         return highest;
-    }
-
-    public float GetTowerHeight()
-    {
-        Transform highestBlock = GetHighestBlock();
-        return highestBlock != null ? highestBlock.position.y : 0f;
     }
 
     public void RegisterBlock(Transform block)
