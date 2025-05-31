@@ -8,8 +8,10 @@ public class BlockManager : MonoBehaviour
 
     private Block currentBlock; // 현재 활성 블럭
 
-    public ScoreManager scoreManager; // ✅ 점수 시스템 연결
+    public ScoreManager scoreManager; // 점수 시스템 연결
     public float spawnDelay = 0.5f;   // 블록 멈춘 후 다음 블록 딜레이
+
+    private int? lastIndex = null; // 마지막으로 생성된 블록 인덱스 저장용
 
     // 새로운 블럭을 무작위로 생성하고 반환
     public Block SpawnBlock()
@@ -21,8 +23,16 @@ public class BlockManager : MonoBehaviour
             return null;
         }
 
-        // 무작위 블럭 선택
-        BlockData data = blockPool[Random.Range(0, blockPool.Count)];
+        // 중복 방지 랜덤 인덱스 선택
+        int newIndex;
+        do
+        {
+            newIndex = Random.Range(0, blockPool.Count);
+        } while (lastIndex != null && blockPool.Count > 1 && newIndex == lastIndex.Value);
+
+        lastIndex = newIndex;
+
+        BlockData data = blockPool[newIndex];
         Debug.Log("생성된 블럭: " + data.blockName);
 
         // 예외 처리: 프리팹 연결 안 되어 있으면
@@ -44,7 +54,6 @@ public class BlockManager : MonoBehaviour
         }
 
         currentBlock.Init(data);
-
 
         currentBlock.OnStopped = () =>
         {
