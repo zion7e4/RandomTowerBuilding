@@ -44,6 +44,8 @@ public class BlockManager : MonoBehaviour
         }
 
         currentBlock.Init(data);
+
+
         currentBlock.OnStopped = () =>
         {
             scoreManager.RegisterBlock(currentBlock.transform);
