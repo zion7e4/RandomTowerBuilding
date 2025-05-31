@@ -25,7 +25,8 @@ public class Building_Movement : MonoBehaviour
     public bool isGrounded = false;
     [SerializeField]
     private bool Spawnnextblock = false;
-
+    [SerializeField]
+    private bool hasStabilized = false;
     public Building_Change buildingchange;
     public BlockData data;
 
@@ -99,14 +100,17 @@ public class Building_Movement : MonoBehaviour
 
     private void StabilizeBlock()
     {
-        isStable = true;
-        rigid2D.linearVelocity = Vector2.zero;
-        rigid2D.angularVelocity = 0f;
+        if (hasStabilized) return;
+        hasStabilized = true;
+        rigid2D.isKinematic = true;
 
-        if (!Spawnnextblock)
+        // 점수 등록
+        if (ScoreManager.Instance != null)
         {
-            SpawnNextBlock(); // 새로운 블록 생성
+            ScoreManager.Instance.RegisterBlock(this.transform);
         }
+
+        SpawnNextBlock();
     }
 
     private void SpawnNextBlock()
