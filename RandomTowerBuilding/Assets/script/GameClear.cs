@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameClear : MonoBehaviour
         if(bc.blockcount >= 15 ||  bc.currentHeight >= targetHeight)
         {
             isGameClear = true;
+            SceneManager.LoadScene("GameClear");
         }
     }
 }
