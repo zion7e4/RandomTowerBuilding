@@ -499,7 +499,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221162255}
-  - component: {fileID: 1221162254}
   - component: {fileID: 1221162253}
   - component: {fileID: 1221162252}
   m_Layer: 0
@@ -540,18 +539,7 @@ MonoBehaviour:
   floor: {fileID: 1834161432}
   targetBlockCount: 15
   targetHeight: 15
---- !u!114 &1221162254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221162251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa56d27ba8a4c7545a9b52de96ef6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  maxHeight: 0
 --- !u!4 &1221162255
 Transform:
   m_ObjectHideFlags: 0
@@ -575,13 +563,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2190465091730852906, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1221162253}
+    - target: {fileID: -2190465091730852906, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: targetHeight
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.z

@@ -106,9 +106,6 @@ public class Building_Movement : MonoBehaviour
         if (hasStabilized) return;
         hasStabilized = true;
 
-
-        rigid2D.isKinematic = true;
-
         if (ScoreManager.Instance != null)
             ScoreManager.Instance.RegisterBlock(this.transform);
 
