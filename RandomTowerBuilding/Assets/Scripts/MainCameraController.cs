@@ -6,8 +6,8 @@ public class MainCameraController : MonoBehaviour
     public static MainCameraController Instance { get; private set; }
     public float yOffset = 5f;
     public float smoothTime = 0.4f;
-    public float zoomOutFOV = 120f;
-    public float baseFOV = 80f;
+    public float zoomOutFOV = 300f;
+    public float baseFOV = 60f;
     public float fovLerpSpeed = 2f;
 
     private Vector3 velocity = Vector3.zero;

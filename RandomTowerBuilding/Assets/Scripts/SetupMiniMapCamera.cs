@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class SetupMiniMapCamera: MonoBehaviour
 {
-    public float baseSize = 5f;          // 가장 낮을 때 orthographicSize
+    public float baseSize = 7f;          // 가장 낮을 때 orthographicSize
     public float maxSize = 40f;           // 최대 orthographicSize
     public float sizeLerpSpeed = 2f;      // 부드럽게 커지는 속도
 
@@ -33,7 +33,7 @@ public class SetupMiniMapCamera: MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime * sizeLerpSpeed);
 
         float yoffset = cam.orthographicSize;
-        transform.position = new Vector3(0, yoffset - 3f, -10);
+        transform.position = new Vector3(0, yoffset - 5f, -10);
     }
 
     Transform GetHighestBlock()
