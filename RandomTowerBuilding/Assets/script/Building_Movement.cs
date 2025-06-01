@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Building_Movement : MonoBehaviour
 {
+    List<Transform> stabilizedBlocks = new List<Transform>();
+
     [SerializeField]
     private float Speed = 5f;
     [SerializeField]
@@ -106,9 +109,6 @@ public class Building_Movement : MonoBehaviour
         if (hasStabilized) return;
         hasStabilized = true;
 
-
-        rigid2D.isKinematic = true;
-
         if (ScoreManager.Instance != null)
             ScoreManager.Instance.RegisterBlock(this.transform);
 
@@ -117,7 +117,6 @@ public class Building_Movement : MonoBehaviour
             buildingchange.IncrementBlockCount();
             isCounted = true;
         }
-
         SpawnNextBlock();
     }
 
