@@ -352,8 +352,8 @@ MonoBehaviour:
     y: 950.4
     width: 524.80005
     height: 54.400024
-  m_MinSize: {x: 260, y: 220}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 261, y: 246}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -380,8 +380,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Preview\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1523.2001
-    y: 1029.6
+    x: 1
+    y: 974.4
     width: 523.80005
     height: 28.400024
   m_SerializedDataModeController:
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79.200005
+    y: 24
     width: 363
     height: 635.6
   m_SerializedDataModeController:
@@ -496,8 +496,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1136.8
-    y: 79.200005
+    x: 1137.8
+    y: 24
     width: 384.3999
     height: 635.6
   m_SerializedDataModeController:
@@ -1163,8 +1163,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 364
-    y: 79.200005
+    x: 365
+    y: 24
     width: 770.80005
     height: 635.6
   m_SerializedDataModeController:
@@ -1236,7 +1236,7 @@ MonoBehaviour:
       height: 1224.7347
     m_MinimalGUI: 1
   m_defaultScale: 0.50182295
-  m_LastWindowPixelSize: {x: 963.50006, y: 794.5}
+  m_LastWindowPixelSize: {x: 770.80005, y: 635.6}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 740.8
+    y: 685.6
     width: 1522.2
     height: 317.20007
   m_SerializedDataModeController:
@@ -1420,21 +1420,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e4b30000
     m_LastClickedID: 46052
-    m_ExpandedIDs: 0000000074b3000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scenes
-      m_OriginalName: Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 46050
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 11}
@@ -1564,8 +1564,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1523.2001
-    y: 79.200005
+    x: 1
+    y: 24
     width: 523.80005
     height: 924.4
   m_SerializedDataModeController:

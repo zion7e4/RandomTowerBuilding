@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     public int targetBlockCount = 15;
     public float targetHeight = 15f;
     public float maxHeight = 0f;
+    private float height;
 
     void Update()
     {
@@ -45,7 +46,7 @@ public class ScoreManager : MonoBehaviour
 
         float blockTop = block.position.y + (block.GetComponent<Renderer>().bounds.size.y / 2f);
         float baseY = floor.position.y;
-        float height = (blockTop - baseY) * 100f;
+        height = (blockTop - baseY) * 100f;
 
         if (height > maxHeight)
             maxHeight = height;
