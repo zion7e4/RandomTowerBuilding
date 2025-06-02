@@ -15,7 +15,7 @@ MonoBehaviour:
   id: LotteWorldTower
   blockName: "\uB86F\uB370\uC6D4\uB4DC\uD0C0\uC6CC"
   height: 3.4
-  width: 0.8
+  width: 1.5
   density: 2.1
   gravityPower: 1
   prefab: {fileID: 8538899370132111087, guid: c65148e3ed55025449d7a95ec2155ead, type: 3}

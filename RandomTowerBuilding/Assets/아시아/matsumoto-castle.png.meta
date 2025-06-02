@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      matsumoto-castle_0: -8375754101683897105
+      matsumoto-castle_1: -5175462670631859077
+      matsumoto-castle_2: 590830563822033303
+      matsumoto-castle_3: 8003902064695972622
+      matsumoto-castle_4: 1956884437768392858
+      matsumoto-castle_5: 1513369888892535707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

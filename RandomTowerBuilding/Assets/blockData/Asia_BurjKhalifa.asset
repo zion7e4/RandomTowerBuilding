@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BurjKhalifa
   blockName: "\uBD80\uB974\uC988 \uCE7C\uB9AC\uD30C"
-  height: 3.5
-  width: 0.6
+  height: 3
+  width: 1
   density: 2
   gravityPower: 1
   prefab: {fileID: 8538899370132111087, guid: 9a253ce3d58773a41a24ee6564453d2f, type: 3}

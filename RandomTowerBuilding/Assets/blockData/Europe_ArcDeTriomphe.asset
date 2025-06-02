@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfc3f398136d4a4cba78082d5325fee, type: 3}
+  m_Name: Europe_ArcDeTriomphe
+  m_EditorClassIdentifier: 
+  id: ArcDeTriomphe
+  blockName: "\uAC1C\uC120\uBB38"
+  height: 2
+  width: 2
+  density: 2.1
+  gravityPower: 1
+  prefab: {fileID: 8080510457393124816, guid: f293acfb5c56a9345906e71bf10ae57e, type: 3}

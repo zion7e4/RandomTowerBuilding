@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfc3f398136d4a4cba78082d5325fee, type: 3}
+  m_Name: Europe_StockholmCityHall
+  m_EditorClassIdentifier: 
+  id: StockholmCityHall
+  blockName: "\uC2A4\uD1A1\uD640\uB984 \uC2DC\uCCAD\uC0AC"
+  height: 2.4
+  width: 2.8
+  density: 2
+  gravityPower: 1
+  prefab: {fileID: 8080510457393124816, guid: 0aa0a2464f8b311418792e8c17379317, type: 3}
