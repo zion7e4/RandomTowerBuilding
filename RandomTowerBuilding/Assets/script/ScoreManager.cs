@@ -23,7 +23,8 @@ public class ScoreManager : MonoBehaviour
     [Header("목표값 (클리어 조건)")]
     public int targetBlockCount = 15;
     public float targetHeight = 15f;
-    public float maxHeight = 0f;
+    public float highest = 0f;
+    public float topY;
 
     void Update()
     {
@@ -71,8 +72,6 @@ public class ScoreManager : MonoBehaviour
 
     private float GetCurrentTowerHeight()
     {
-        float highest = 0f;
-
         foreach (Transform block in stabilizedBlocks)
         {
             if (block == null) continue;
@@ -80,7 +79,7 @@ public class ScoreManager : MonoBehaviour
             Renderer rend = block.GetComponent<Renderer>();
             if (rend == null) continue;
 
-            float topY = block.position.y + (rend.bounds.size.y / 2f);
+            topY = block.position.y + (rend.bounds.size.y / 2f);
             float baseY = floor.position.y;
             float height = (topY - baseY) * 100f;
 
@@ -94,7 +93,7 @@ public class ScoreManager : MonoBehaviour
     public void ResetScore()
     {
         bc.blockcount = 0;
-        maxHeight = 0f;
+        highest = 0f;
         UpdateUI();
     }
 }

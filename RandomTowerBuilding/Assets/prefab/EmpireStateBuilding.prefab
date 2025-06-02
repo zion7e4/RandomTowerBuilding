@@ -129,7 +129,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d1323fd9b9eb578499be28a211a498dd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -222,6 +222,8 @@ MonoBehaviour:
   isCounted: 0
   isGrounded: 0
   Spawnnextblock: 0
+  hasStabilized: 0
+  isFirstBlock: 1
   buildingchange: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
   data: {fileID: 11400000, guid: 17924c90582d1bc40af5a18305e18a24, type: 2}
 --- !u!114 &1170102896575456054

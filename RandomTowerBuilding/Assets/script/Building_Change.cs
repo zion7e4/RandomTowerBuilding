@@ -8,6 +8,7 @@ public class Building_Change : MonoBehaviour
     MainCameraController mainCameraController;
     Building_Movement bm;
     Block block;
+    public ScoreManager scoremanager;
     public List<BlockData> blockPool;
     public Transform spawnPoint; // 블록 생성 위치
 
@@ -85,7 +86,7 @@ public class Building_Change : MonoBehaviour
         Transform highestBlock = MainCameraController.Instance.GetHighestBlock();
         if (highestBlock == null) return;
 
-         currentHeight = highestBlock.position.y;
+         currentHeight = scoremanager.topY;
          spawnY = spawnPoint.position.y;
 
         // 첫 번째 블록일 경우 스폰 포인트 조정 건너뜀

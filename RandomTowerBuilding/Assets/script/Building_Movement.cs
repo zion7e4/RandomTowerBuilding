@@ -11,7 +11,7 @@ public class Building_Movement : MonoBehaviour
     [SerializeField]
     private float rotateSpeed = 30f;
     private float stabilityTime = 0.5f;
-    private float stableTimer;
+    private float stableTimer = 0;
 
     private Rigidbody2D rigid2D;
 
@@ -89,7 +89,7 @@ public class Building_Movement : MonoBehaviour
 
     private void CheckStability()
     {
-        if(rigid2D.linearVelocity.magnitude < 0.1 && Mathf.Abs(rigid2D.angularVelocity) < 1)
+        if(rigid2D.linearVelocity.magnitude <= 0.1 && Mathf.Abs(rigid2D.angularVelocity) <= 1)
         {
             stableTimer += Time.deltaTime; // 안정화 시간 증가
             if (stableTimer >= stabilityTime)
@@ -106,6 +106,10 @@ public class Building_Movement : MonoBehaviour
 
     private void StabilizeBlock()
     {
+        isStable = true;
+        rigid2D.linearVelocity = Vector2.zero;
+        rigid2D.angularVelocity = 0f;
+
         if (hasStabilized) return;
         hasStabilized = true;
 
@@ -117,7 +121,11 @@ public class Building_Movement : MonoBehaviour
             buildingchange.IncrementBlockCount();
             isCounted = true;
         }
-        SpawnNextBlock();
+
+        if(!Spawnnextblock)
+        {
+            SpawnNextBlock();
+        }
     }
 
     private void SpawnNextBlock()
@@ -133,7 +141,7 @@ public class Building_Movement : MonoBehaviour
             isGrounded = true;
             if (isFirstBlock)
             {
-                StabilizeBlock();
+                CheckStability();
                 isFirstBlock = false;
             }
         }

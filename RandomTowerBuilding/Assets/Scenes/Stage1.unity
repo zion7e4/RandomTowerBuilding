@@ -1063,7 +1063,8 @@ MonoBehaviour:
   floor: {fileID: 1834161432}
   targetBlockCount: 15
   targetHeight: 15
-  maxHeight: 0
+  highest: 0
+  topY: 0
 --- !u!4 &1221162255
 Transform:
   m_ObjectHideFlags: 0
@@ -1176,7 +1177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1102653834743667851, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1214,6 +1215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
+      propertyPath: scoremanager
+      value: 
+      objectReference: {fileID: 1221162253}
     - target: {fileID: 7677082370003772297, guid: 46c1e752faf7f064496ae741c91890e3, type: 3}
       propertyPath: blockPool.Array.size
       value: 11
