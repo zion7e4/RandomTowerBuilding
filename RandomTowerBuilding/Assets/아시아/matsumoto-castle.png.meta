@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: ca0294d43cb7e824d9f1e0119e6d2074
+guid: d1f6f8922092fa84abebb4e52770b610
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2957581436142002153
-    second: Light long keys_0
+      213: -8375754101683897105
+    second: matsumoto-castle_0
   - first:
-      213: 711755413067856136
-    second: Light long keys_1
+      213: -5175462670631859077
+    second: matsumoto-castle_1
   - first:
-      213: -1133290678780747856
-    second: Light long keys_2
+      213: 590830563822033303
+    second: matsumoto-castle_2
   - first:
-      213: 7435426762654021633
-    second: Light long keys_3
+      213: 8003902064695972622
+    second: matsumoto-castle_3
   - first:
-      213: -6862960335557547550
-    second: Light long keys_4
+      213: 1956884437768392858
+    second: matsumoto-castle_4
   - first:
-      213: -2615752979051553456
-    second: Light long keys_5
-  - first:
-      213: 8971932809865851335
-    second: Light long keys_6
-  - first:
-      213: -4054190387900908606
-    second: Light long keys_7
-  - first:
-      213: 5594065753518582068
-    second: Light long keys_8
-  - first:
-      213: -2341290903591611834
-    second: Light long keys_9
+      213: 1513369888892535707
+    second: matsumoto-castle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Light long keys_0
+      name: matsumoto-castle_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 94
-        height: 48
+        x: 282
+        y: 125
+        width: 1533
+        height: 992
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ef988f65a07b0920800000000000000
-      internalID: 2957581436142002153
+      spriteID: fec3c1b650853cb80800000000000000
+      internalID: -8375754101683897105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light long keys_1
+      name: matsumoto-castle_1
       rect:
         serializedVersion: 2
-        x: 97
-        y: 0
-        width: 94
-        height: 48
+        x: 1773
+        y: 260
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 809fed2f6c9a0e900800000000000000
-      internalID: 711755413067856136
+      spriteID: b7c81b03f101d28b0800000000000000
+      internalID: -5175462670631859077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light long keys_2
+      name: matsumoto-castle_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 0
-        width: 94
-        height: 48
+        x: 1880
+        y: 266
+        width: 37
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0bf1300d12eb540f0800000000000000
-      internalID: -1133290678780747856
+      spriteID: 7995e07744d033800800000000000000
+      internalID: 590830563822033303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light long keys_3
+      name: matsumoto-castle_3
       rect:
         serializedVersion: 2
-        x: 289
-        y: 0
-        width: 94
-        height: 48
+        x: 1770
+        y: 229
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 108fc6dfe31ff2760800000000000000
-      internalID: 7435426762654021633
+      spriteID: e0318377582931f60800000000000000
+      internalID: 8003902064695972622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light long keys_4
+      name: matsumoto-castle_4
       rect:
         serializedVersion: 2
-        x: 385
-        y: 0
-        width: 94
-        height: 48
+        x: 1758
+        y: 160
+        width: 25
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e92f73bfedd1c0a0800000000000000
-      internalID: -6862960335557547550
+      spriteID: a90dca33700482b10800000000000000
+      internalID: 1956884437768392858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light long keys_5
+      name: matsumoto-castle_5
       rect:
         serializedVersion: 2
-        x: 481
-        y: 0
-        width: 94
-        height: 48
+        x: 1900
+        y: 145
+        width: 10
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,96 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05d567f368af2bbd0800000000000000
-      internalID: -2615752979051553456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Light long keys_6
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 0
-        width: 94
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c1f9b0fa55b28c70800000000000000
-      internalID: 8971932809865851335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Light long keys_7
-      rect:
-        serializedVersion: 2
-        x: 673
-        y: 0
-        width: 94
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2cbfc5d725f9cb7c0800000000000000
-      internalID: -4054190387900908606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Light long keys_8
-      rect:
-        serializedVersion: 2
-        x: 769
-        y: 0
-        width: 94
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43927a80a2d12ad40800000000000000
-      internalID: 5594065753518582068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Light long keys_9
-      rect:
-        serializedVersion: 2
-        x: 865
-        y: 0
-        width: 94
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 642919fe350128fd0800000000000000
-      internalID: -2341290903591611834
+      spriteID: b93463155e1900510800000000000000
+      internalID: 1513369888892535707
       vertices: []
       indices: 
       edges: []
@@ -359,17 +259,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Light long keys_0: 2957581436142002153
-      Light long keys_1: 711755413067856136
-      Light long keys_2: -1133290678780747856
-      Light long keys_3: 7435426762654021633
-      Light long keys_4: -6862960335557547550
-      Light long keys_5: -2615752979051553456
-      Light long keys_6: 8971932809865851335
-      Light long keys_7: -4054190387900908606
-      Light long keys_8: 5594065753518582068
-      Light long keys_9: -2341290903591611834
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
