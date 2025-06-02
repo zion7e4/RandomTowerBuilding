@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
-public class MiniMapCameraController : MonoBehaviour
+public class SetupMiniMapCamera: MonoBehaviour
 {
-    public float baseSize = 10f;          // 가장 낮을 때 orthographicSize
+    public float baseSize = 5f;          // 가장 낮을 때 orthographicSize
     public float maxSize = 40f;           // 최대 orthographicSize
     public float sizeLerpSpeed = 2f;      // 부드럽게 커지는 속도
 
@@ -16,7 +16,7 @@ public class MiniMapCameraController : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         cam.orthographic = true;
-        cam.rect = new Rect(0.75f, 0f, 0.25f, 0.25f);
+        cam.rect = new Rect(0.77f, 0f, 0.23f, 0.25f);
         cam.depth = 1;
     }
 
@@ -33,7 +33,7 @@ public class MiniMapCameraController : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime * sizeLerpSpeed);
 
         float yoffset = cam.orthographicSize;
-        transform.position = new Vector3(0, yoffset - 2.5f, -10);
+        transform.position = new Vector3(0, yoffset - 3f, -10);
     }
 
     Transform GetHighestBlock()

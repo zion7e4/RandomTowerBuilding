@@ -1,52 +1,79 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-// 전체 게임의 흐름을 관리하는 스크립트
+
+/// 전체 게임의 흐름과 블록 조작, 게임 오버 조건을 관리하는 스크립트.
+
 public class GameManager : MonoBehaviour
 {
-    public BlockManager blockManager; // 블럭 관리자 참조
+    public static GameManager Instance { get; private set; }
 
-    void Start()
+    // --- 참조들 ---
+    public GameObject gameOverUI;
+
+    // --- 내부 상태 변수 ---
+    private bool isGameOver = false;
+    private List<Transform> activeBlocks = new(); // 감시 대상 블록들
+    public float fallLimitY = -15f;                // Y값 기준선. 아래로 떨어지면 오버 처리됨
+
+    void Awake()
     {
-        SpawnAndListen(); // 첫 블럭 생성
+        // 싱글턴 초기화
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
+
 
     void Update()
     {
-        Block current = blockManager.GetCurrentBlock();
+        if (!isGameOver)
+            MonitorBlocksFall();
+    }
 
-        if (current != null)
+
+    /// 블록을 감시 대상에 추가함
+    public void RegisterBlock(Transform block)
+    {
+        activeBlocks.Add(block);
+    }
+
+    /// 모든 감시 중인 블록을 검사해서 화면 아래로 떨어졌는지 확인
+    void MonitorBlocksFall()
+    {
+        foreach (Transform block in activeBlocks)
         {
-            // 좌우 이동 (0.5 유닛씩)
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-                current.Move(Vector2.left * 0.5f);
+            if (block == null) continue;
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-                current.Move(Vector2.right * 0.5f);
-
-            // 회전
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-                current.Rotate(15f); // 반시계 방향
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-                current.Rotate(-15f); // 시계 방향
-
-            // 낙하 (물리 활성화)
-            if (Input.GetKeyDown(KeyCode.Return))
-                blockManager.DropCurrentBlock();
+            if (block.position.y < fallLimitY)
+            {
+                GameOver();
+                break;
+            }
         }
     }
-
-    // 블럭 생성 + 정지 감지 리스너 등록
-    void SpawnAndListen()
+    /// 게임 오버 처리 함수. 단 한 번만 실행됨.
+    public void GameOver()
     {
-        Block newBlock = blockManager.SpawnBlock();
-        newBlock.OnStopped = HandleBlockStopped;
+        if (isGameOver) return;
+
+        isGameOver = true;
+        Debug.Log("게임 오버!");
+
+        Time.timeScale = 0; // 게임 멈춤
+
+        if (gameOverUI != null)
+            gameOverUI.SetActive(true);
     }
 
-    // 블럭이 정지되면 다음 블럭 생성
-    void HandleBlockStopped(Block block)
+    /// 게임 오버 체크 초기화
+    public void ResetGameOverSystem()
     {
-        blockManager.ClearCurrentBlock();
-        Invoke(nameof(SpawnAndListen), 0.5f);
+        activeBlocks.Clear();
+        isGameOver = false;
     }
 }

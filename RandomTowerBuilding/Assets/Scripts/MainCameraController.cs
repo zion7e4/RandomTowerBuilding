@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class MainCameraController : MonoBehaviour
 {
-    public static MainCameraController Instance { get; private set; } // 싱글턴 인스턴스
-
+    public static MainCameraController Instance { get; private set; }
     public float yOffset = 5f;
     public float smoothTime = 0.4f;
     public float zoomOutFOV = 120f;
@@ -16,16 +15,15 @@ public class MainCameraController : MonoBehaviour
 
     // 블록들을 모두 등록해둘 리스트
     public List<Transform> allBlocks = new List<Transform>();
-
     private void Awake()
     {
         if (Instance == null)
         {
-            Instance = this; // 싱글턴 초기화
+            Instance = this;
         }
         else
         {
-            Destroy(gameObject); // 중복된 싱글턴 제거
+            Destroy(gameObject);
         }
     }
 
@@ -39,35 +37,31 @@ public class MainCameraController : MonoBehaviour
         Transform highestBlock = GetHighestBlock();
         if (highestBlock == null) return;
 
-        float targetY = highestBlock.position.y + yOffset;
-        /*if (targetY > transform.position.y)
+        /*float targetY = highestBlock.position.y + yOffset;
+        *//*if (targetY > transform.position.y)
         {
             Vector3 targetPosition = new Vector3(transform.position.x, targetY, transform.position.z);
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        }*/
+        }*//*
 
         Vector3 targetPosition = new Vector3(transform.position.x, targetY, transform.position.z);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-
-        float targetFOV = Mathf.Lerp(baseFOV, zoomOutFOV, highestBlock.position.y / 100f);
+*/
+        float heightFactor = Mathf.Clamp01(highestBlock.position.y / 100f);
+        float targetFOV = Mathf.Lerp(baseFOV, zoomOutFOV, heightFactor);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);
-
     }
 
-     public Transform GetHighestBlock()
+    public Transform GetHighestBlock()
     {
         if (allBlocks.Count == 0) return null;
 
         Transform highest = allBlocks[0];
         foreach (var block in allBlocks)
         {
-            Building_Movement movement = block.GetComponent<Building_Movement>();
-            if (movement != null && movement.isGrounded) // isGrounded 상태 확인
+            if (block != null && block.position.y > highest.position.y)
             {
-                if (highest == null || block.position.y > highest.position.y)
-                {
-                    highest = block;
-                }
+                highest = block;
             }
         }
         return highest;

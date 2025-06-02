@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Building_Movement : MonoBehaviour
@@ -7,7 +7,7 @@ public class Building_Movement : MonoBehaviour
     private float Speed = 5f;
     [SerializeField]
     private float rotateSpeed = 30f;
-    private float stabilityTime = 0.5f;
+    private float stabilityTime = 2f;
     private float stableTimer;
 
     private Rigidbody2D rigid2D;
@@ -25,6 +25,10 @@ public class Building_Movement : MonoBehaviour
     public bool isGrounded = false;
     [SerializeField]
     private bool Spawnnextblock = false;
+    [SerializeField]
+    private bool hasStabilized = false;
+    [SerializeField]
+    private bool isFirstBlock = true;
 
     public Building_Change buildingchange;
     public BlockData data;
@@ -36,7 +40,7 @@ public class Building_Movement : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal"); //A, D / <-, -> ≈∞ 
+        float x = Input.GetAxisRaw("Horizontal"); //A, D / <-, -> ÌÇ§ 
         float z = Input.GetAxisRaw("Vertical");
         if(isControllable)
         {
@@ -57,7 +61,7 @@ public class Building_Movement : MonoBehaviour
         }
     }
 
-    private void MoveTo(float x) //¡¬øÏ ¿Ãµø
+    private void MoveTo(float x) //Ï¢åÏö∞ Ïù¥Îèô
     {
         moveDirection = new Vector3(x, 0, 0);
 
@@ -76,7 +80,7 @@ public class Building_Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isControllable = false;
-            rigid2D.gravityScale = 1.0f;
+            rigid2D.gravityScale = data.gravityPower;
         }
     }
 
@@ -84,28 +88,39 @@ public class Building_Movement : MonoBehaviour
     {
         if(rigid2D.linearVelocity.magnitude < 0.1 && Mathf.Abs(rigid2D.angularVelocity) < 1)
         {
-            stableTimer += Time.deltaTime; // æ»¡§»≠ Ω√∞£ ¡ı∞°
+            stableTimer += Time.deltaTime; // ÏïàÏ†ïÌôî ÏãúÍ∞Ñ Ï¶ùÍ∞Ä
             if (stableTimer >= stabilityTime)
             {
-                StabilizeBlock(); // ∫Ì∑œ æ»¡§»≠
+                StabilizeBlock(); // Î∏îÎ°ù ÏïàÏ†ïÌôî
             }
         }
         else
         {
-            stableTimer = 0f; // æ»¡§»≠ Ω√∞£ √ ±‚»≠
+            stableTimer = 0f; // ÏïàÏ†ïÌôî ÏãúÍ∞Ñ Ï¥àÍ∏∞Ìôî
         }
 
     }
 
     private void StabilizeBlock()
     {
+        if (hasStabilized) return;
+        hasStabilized = true;
         isStable = true;
         rigid2D.linearVelocity = Vector2.zero;
         rigid2D.angularVelocity = 0f;
 
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.RegisterBlock(this.transform);
+
+        if (!isCounted)
+        {
+            buildingchange.IncrementBlockCount();
+            isCounted = true;
+        }
+
         if (!Spawnnextblock)
         {
-            SpawnNextBlock(); // ªı∑ŒøÓ ∫Ì∑œ ª˝º∫
+            SpawnNextBlock();
         }
     }
 
@@ -115,19 +130,16 @@ public class Building_Movement : MonoBehaviour
         buildingchange.SpawnNewBlock();
     }
 
-    public float getBlockLength()
-    {
-        float rotationZ = transform.eulerAngles.z;
-        bool isVertical = Mathf.Abs(rotationZ % 180) < 0.1;
-        return isVertical ? data.height : data.width;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Block"))
         {
-            isGrounded = true;            
-            CheckStability();
+            isGrounded = true;
+            if (isFirstBlock)
+            {
+                StabilizeBlock();
+                isFirstBlock = false;
+            }
         }
     }
 }

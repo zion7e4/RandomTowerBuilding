@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Casa Loma
   blockName: "\uCE74\uC0AC \uB85C\uB9C8"
-  height: 1
+  height: 1.5
   width: 1.8
   density: 2.6
   gravityPower: 1

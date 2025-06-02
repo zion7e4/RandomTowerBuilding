@@ -31,7 +31,7 @@ public class BlockRegistrar : MonoBehaviour
                 mainCam.RegisterBlock(transform);
             }
 
-            MiniMapCameraController miniMapCam = FindObjectOfType<MiniMapCameraController>();
+            SetupMiniMapCamera miniMapCam = FindObjectOfType<SetupMiniMapCamera>();
             if (miniMapCam != null)
             {
                 miniMapCam.RegisterBlock(transform);

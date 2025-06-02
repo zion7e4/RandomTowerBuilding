@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class Building_Change : MonoBehaviour
 {
     MainCameraController mainCameraController;
     Building_Movement bm;
-    public GameObject[] blockPrefabs; // 블록 프리팹 배열
+    Block block;
+    public List<BlockData> blockPool;
     public Transform spawnPoint; // 블록 생성 위치
 
     public GameObject currentBlock;
@@ -14,6 +17,7 @@ public class Building_Change : MonoBehaviour
     [SerializeField]
     public int blockcount;
     private float previousHighestY = 0f; // 이전 최고 높이 기록
+    [SerializeField]
     private bool isFirstBlock = true; // 첫 번째 블록 여부를 추적
     [SerializeField]
     public float currentHeight;
@@ -41,14 +45,21 @@ public class Building_Change : MonoBehaviour
 
     public void SpawnNewBlock()
     {
-        int randomIndex = Random.Range(0, blockPrefabs.Length);
-        GameObject newBlock = Instantiate(blockPrefabs[randomIndex], spawnPoint.position, Quaternion.identity);
+        int randomIndex = Random.Range(0, blockPool.Count);
+        BlockData data = blockPool[randomIndex];
+        GameObject newData = Instantiate(blockPool[randomIndex].prefab, spawnPoint.position, Quaternion.identity);
+
+        block = newData.GetComponent<Block>();
+        block.Init(data);
 
         // `currentBlock` 갱신
-        currentBlock = newBlock;
+        currentBlock = newData;
+
+        // 블록 감시 대상 등록
+        GameManager.Instance.RegisterBlock(newData.transform);
 
         // 새 블록에 `Building_Movement` 연결
-        Building_Movement movement = newBlock.GetComponent<Building_Movement>();
+        Building_Movement movement = newData.GetComponent<Building_Movement>();
         if (movement != null)
         {
             movement.buildingchange = this; // 새 블록이 `Building_Change`를 참조
