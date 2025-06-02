@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 /// 전체 게임의 흐름과 블록 조작, 게임 오버 조건을 관리하는 스크립트.
 
@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public static string LastPlayedStage;
     // --- 참조들 ---
-    public GameObject gameOverUI;
+    //public GameObject gameOverUI;
 
     // --- 내부 상태 변수 ---
     private bool isGameOver = false;
@@ -65,9 +66,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("게임 오버!");
 
         Time.timeScale = 0; // 게임 멈춤
-
-        if (gameOverUI != null)
-            gameOverUI.SetActive(true);
+        LastPlayedStage = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("GameOver");
+        /*if (gameOverUI != null)
+            gameOverUI.SetActive(true);*/
     }
 
     /// 게임 오버 체크 초기화

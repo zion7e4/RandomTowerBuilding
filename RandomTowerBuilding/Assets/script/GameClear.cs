@@ -12,10 +12,21 @@ public class GameClear : MonoBehaviour
 
     private void Update()
     {
-        if(bc.blockcount >= 15 || scoreManager.maxHeight >= targetHeight)
+        if (bc.blockcount >= 15 || scoreManager.maxHeight >= targetHeight)
         {
             isGameClear = true;
-            SceneManager.LoadScene("GameClear");
+            GameManager.LastPlayedStage = SceneManager.GetActiveScene().name;
+            string currentScene = SceneManager.GetActiveScene().name;
+
+            if (currentScene == "Stage1" || currentScene == "Stage2")
+            {
+                SceneManager.LoadScene("StageClear");
+            }
+            else if (currentScene == "Stage3")
+            {
+                SceneManager.LoadScene("GameClear");
+            }
         }
+
     }
 }

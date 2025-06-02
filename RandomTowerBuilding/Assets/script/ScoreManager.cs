@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     [Header("목표값 (클리어 조건)")]
     public int targetBlockCount = 15;
     public float targetHeight = 15f;
-    private float maxHeight = 0f;
+    public float maxHeight = 0f;
 
     void Update()
     {
