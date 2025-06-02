@@ -13,7 +13,7 @@ public class Building_Change : MonoBehaviour
 
     public GameObject currentBlock;
     [SerializeField]
-    private int remainingSwaps = 2; // 바꾸기 가능 횟수
+    public int remainingSwaps = 2; // 바꾸기 가능 횟수
     [SerializeField]
     public int blockcount;
     private float previousHighestY = 0f; // 이전 최고 높이 기록
@@ -49,6 +49,8 @@ public class Building_Change : MonoBehaviour
         BlockData data = blockPool[randomIndex];
         GameObject newData = Instantiate(blockPool[randomIndex].prefab, spawnPoint.position, Quaternion.identity);
 
+        newData.name = data.prefab.name;
+
         block = newData.GetComponent<Block>();
         block.Init(data);
 
@@ -64,6 +66,7 @@ public class Building_Change : MonoBehaviour
         {
             movement.buildingchange = this; // 새 블록이 `Building_Change`를 참조
         }
+        ScoreManager.Instance.UpdateBlockName(newData.name);
     }
 
     private void SwapBlock()

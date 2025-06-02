@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using TMPro.Examples;
 
 /// 생성된 블록의 개수와 최고 높이를 관리하고 UI에 표시함
 public class ScoreManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class ScoreManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI blockCountText;
     public TextMeshProUGUI heightText;
+    public TextMeshProUGUI switchText;
+    public TextMeshProUGUI blockNameText;
     Building_Change bc;
 
     [Header("기준 지면 (floor)")]
@@ -53,10 +56,17 @@ public class ScoreManager : MonoBehaviour
     private void UpdateUI()
     {
         if (blockCountText != null)
-            blockCountText.text = $"blockCount: {bc.blockcount}";
+            blockCountText.text = $"BlockCount: {bc.blockcount}";
 
         if (heightText != null)
-            heightText.text = $"height: {GetCurrentTowerHeight():F2}m";
+            heightText.text = $"Height: {GetCurrentTowerHeight():F2}m";
+    }
+    public void UpdateBlockName(string blockName)
+    {
+        if (blockNameText != null)
+        {
+            blockNameText.text = $"Block Name\n: {blockName}";
+        }
     }
 
     private float GetCurrentTowerHeight()
