@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf6b84e50f170c4e9493aa4e2b9f6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 5
-  smoothTime: 0.4
+  yOffset: 3
+  smoothTime: 0.7
   zoomOutFOV: 400
   baseFOV: 60
   fovLerpSpeed: 2
@@ -520,7 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370bcc431cba650499693bb83c4ee051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
   fallLimitY: -10
 --- !u!114 &1221162253
 MonoBehaviour:

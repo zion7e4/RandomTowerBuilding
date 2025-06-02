@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         Debug.Log("∞‘¿” ø¿πˆ!");
 
-        Time.timeScale = 0; // ∞‘¿” ∏ÿ√„
+        //Time.timeScale = 0; // ∞‘¿” ∏ÿ√„
         LastPlayedStage = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("GameOver");
         /*if (gameOverUI != null)
