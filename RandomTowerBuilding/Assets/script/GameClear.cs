@@ -8,6 +8,8 @@ public class GameClear : MonoBehaviour
     private bool isGameClear = false;
     [SerializeField]
     private float targetHeight = 1500f;
+    [SerializeField]
+    private int targetCount = 15;
     public Building_Change bc;
 
     private void Update()
