@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: USCapitol
   blockName: "\uAD6D\uD68C\uC758\uC0AC\uB2F9"
-  height: 2.1
-  width: 2.4
+  height: 1.8
+  width: 1.6
   density: 1.6
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: fa6a6844b16125946aec4251447be084, type: 3}

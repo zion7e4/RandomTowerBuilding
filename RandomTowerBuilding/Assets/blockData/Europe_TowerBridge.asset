@@ -15,7 +15,7 @@ MonoBehaviour:
   id: TowerBridge
   blockName: "\uB7F0\uB358\uD0C0\uC6CC\uBE0C\uB9BF\uC9C0"
   height: 2.4
-  width: 2.8
+  width: 2.6
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 966fdb67aacc1884e8e58fa5a24e258b, type: 3}
