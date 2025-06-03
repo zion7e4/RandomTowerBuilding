@@ -61,6 +61,9 @@ public class ScoreManager : MonoBehaviour
 
         if (heightText != null)
             heightText.text = $"Height: {GetCurrentTowerHeight():F2}m";
+
+        if (switchText != null)
+            switchText.text = $"Switch ({Building_Change.remainingSwaps})";
     }
     public void UpdateBlockName(string blockName)
     {

@@ -14,7 +14,7 @@ public class Building_Change : MonoBehaviour
 
     public GameObject currentBlock;
     [SerializeField]
-    public int remainingSwaps = 2; // 바꾸기 가능 횟수
+    public static int remainingSwaps = 2; // 바꾸기 가능 횟수
     [SerializeField]
     public int blockcount;
     private float previousHighestY = 0f; // 이전 최고 높이 기록
