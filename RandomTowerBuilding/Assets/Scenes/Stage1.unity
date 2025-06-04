@@ -1622,6 +1622,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSound: {fileID: 8300000, guid: aeb4124a511d58241b58429c36c49931, type: 3}
   landSound: {fileID: 8300000, guid: 9358d33e26332cb49891e9a3242f1d11, type: 3}
+  sirenSound: {fileID: 0}
+  rumbleSound: {fileID: 0}
+  thunderSound: {fileID: 0}
 --- !u!4 &1463838153
 Transform:
   m_ObjectHideFlags: 0
@@ -2470,8 +2473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 640.1, y: 244.19}
-  m_SizeDelta: {x: 300.4, y: 50}
+  m_AnchoredPosition: {x: 724.94995, y: 244.19}
+  m_SizeDelta: {x: 470.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990200304
 MonoBehaviour:
@@ -2558,7 +2561,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -62.924316, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.97631836, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
