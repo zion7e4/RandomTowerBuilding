@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: StockholmCityHall
   blockName: "\uC2A4\uD1A1\uD640\uB984 \uC2DC\uCCAD\uC0AC"
-  height: 2.4
-  width: 2.8
+  height: 2.3
+  width: 2.5
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 0aa0a2464f8b311418792e8c17379317, type: 3}

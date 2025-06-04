@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: NotreDame
   blockName: "\uB178\uD2B8\uB974\uB2F4 \uB300\uC131\uB2F9"
-  height: 2.4
-  width: 2.8
+  height: 2.2
+  width: 2.6
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 5e4ddfb2cbcd280439b6418d9c9ef7b2, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Neuschwanstein
   blockName: "\uB178\uC774\uBC18 \uC288\uD0C0\uC778\uC131"
-  height: 2.4
-  width: 2.8
+  height: 2.2
+  width: 2.5
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 26d6e78f8b35b69449aa24847fd0dd5d, type: 3}
