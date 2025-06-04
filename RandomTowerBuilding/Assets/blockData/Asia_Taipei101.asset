@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Taipei101
   blockName: "\uD0C0\uC774\uD398\uC774 101"
-  height: 3.3
+  height: 2.5
   width: 0.9
   density: 2.2
   gravityPower: 1

@@ -14,7 +14,7 @@ public class GameClear : MonoBehaviour
 
     private void Update()
     {
-        if (bc.blockcount >= targetCount || scoreManager.highest >= targetHeight)
+        if (bc.blockcount >= 15 || scoreManager.highest >= targetHeight)
         {
             isGameClear = true;
             GameManager.LastPlayedStage = SceneManager.GetActiveScene().name;

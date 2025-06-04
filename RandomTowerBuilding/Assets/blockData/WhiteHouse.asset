@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: WhiteHouse
   blockName: "\uBC31\uC545\uAD00"
-  height: 2
-  width: 2
+  height: 2.3
+  width: 2.3
   density: 1.7
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: bec0b6b6ed223ef45b0a1c95d0a4245a, type: 3}

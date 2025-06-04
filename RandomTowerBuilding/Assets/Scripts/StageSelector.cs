@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class StageSelector : MonoBehaviour
 {
@@ -14,15 +13,13 @@ public class StageSelector : MonoBehaviour
     public Image stage2Image;
     public Image stage3Image;
 
+    // 버튼의 Image 컴포넌트도 받아오기
     private Image stage1ButtonImage;
     private Image stage2ButtonImage;
     private Image stage3ButtonImage;
 
     private string selectedStage = "";
     private bool stageSelected = false;
-
-    [SerializeField] private AudioClip buttonClickSound;  // 클릭 사운드
-    private AudioSource audioSource;
 
     private void Start()
     {
@@ -36,15 +33,12 @@ public class StageSelector : MonoBehaviour
         stage2Button.onClick.AddListener(() => SelectStage("Stage2"));
         stage3Button.onClick.AddListener(() => SelectStage("Stage3"));
 
-        GameStartButton.onClick.AddListener(() => StartCoroutine(PlaySoundAndStartGame()));
+        GameStartButton.onClick.AddListener(StartGame);
 
+        // 시작 시 이미지 모두 비활성화
         stage1Image.gameObject.SetActive(false);
         stage2Image.gameObject.SetActive(false);
         stage3Image.gameObject.SetActive(false);
-
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void SelectStage(string stageName)
@@ -55,14 +49,17 @@ public class StageSelector : MonoBehaviour
 
         GameStartButton.gameObject.SetActive(true);
 
+        // 선택된 이미지 활성화, 나머지 비활성화
         stage1Image.gameObject.SetActive(stageName == "Stage1");
         stage2Image.gameObject.SetActive(stageName == "Stage2");
         stage3Image.gameObject.SetActive(stageName == "Stage3");
 
+        // 이미지 음영 처리: 선택된 것은 밝게, 나머지는 어둡게(알파 낮춤)
         SetStageImageOpacity(stage1Image, stageName == "Stage1" ? 1f : 0.5f);
         SetStageImageOpacity(stage2Image, stageName == "Stage2" ? 1f : 0.5f);
         SetStageImageOpacity(stage3Image, stageName == "Stage3" ? 1f : 0.5f);
 
+        // 버튼 이미지도 음영 처리
         SetStageImageOpacity(stage1ButtonImage, stageName == "Stage1" ? 1f : 0.5f);
         SetStageImageOpacity(stage2ButtonImage, stageName == "Stage2" ? 1f : 0.5f);
         SetStageImageOpacity(stage3ButtonImage, stageName == "Stage3" ? 1f : 0.5f);
@@ -76,14 +73,8 @@ public class StageSelector : MonoBehaviour
         img.color = c;
     }
 
-    private IEnumerator PlaySoundAndStartGame()
+    void StartGame()
     {
-        if (buttonClickSound != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(buttonClickSound);
-            yield return new WaitForSeconds(buttonClickSound.length);
-        }
-
         if (!string.IsNullOrEmpty(selectedStage))
         {
             SceneManager.LoadScene(selectedStage);
