@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Building_Movement : MonoBehaviour
 {
@@ -43,9 +42,9 @@ public class Building_Movement : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal"); //A, D / <-, -> 키 
+        float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
-        if(isControllable)
+        if (isControllable)
         {
             MoveTo(x);
             Rotate(z);
@@ -64,10 +63,9 @@ public class Building_Movement : MonoBehaviour
         }
     }
 
-    private void MoveTo(float x) //좌우 이동
+    private void MoveTo(float x)
     {
         moveDirection = new Vector3(x, 0, 0);
-
         transform.position += moveDirection * Speed * Time.deltaTime;
     }
 
@@ -75,7 +73,6 @@ public class Building_Movement : MonoBehaviour
     {
         rotationDirection = new Vector3(0, 0, z);
         transform.Rotate(rotationDirection * rotateSpeed * Time.deltaTime);
-
     }
 
     private void DropBlock()
@@ -84,24 +81,27 @@ public class Building_Movement : MonoBehaviour
         {
             isControllable = false;
             rigid2D.gravityScale = data.gravityPower;
+
+            // 블록 드롭 사운드
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlayDropSound();
         }
     }
 
     private void CheckStability()
     {
-        if(rigid2D.linearVelocity.magnitude <= 0.1 && Mathf.Abs(rigid2D.angularVelocity) <= 1)
+        if (rigid2D.linearVelocity.magnitude <= 0.1f && Mathf.Abs(rigid2D.angularVelocity) <= 1f)
         {
-            stableTimer += Time.deltaTime; // 안정화 시간 증가
+            stableTimer += Time.deltaTime;
             if (stableTimer >= stabilityTime)
             {
-                StabilizeBlock(); // 블록 안정화
+                StabilizeBlock();
             }
         }
         else
         {
-            stableTimer = 0f; // 안정화 시간 초기화
+            stableTimer = 0f;
         }
-
     }
 
     private void StabilizeBlock()
@@ -113,8 +113,7 @@ public class Building_Movement : MonoBehaviour
         if (hasStabilized) return;
         hasStabilized = true;
 
-        if (ScoreManager.Instance != null)
-            ScoreManager.Instance.RegisterBlock(this.transform);
+        
 
         if (!isCounted)
         {
@@ -122,7 +121,7 @@ public class Building_Movement : MonoBehaviour
             isCounted = true;
         }
 
-        if(!Spawnnextblock)
+        if (!Spawnnextblock)
         {
             SpawnNextBlock();
         }
@@ -138,6 +137,12 @@ public class Building_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Block"))
         {
+            // 블록 착지 사운드
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlayLandSound();
+
+            if (ScoreManager.Instance != null)
+                ScoreManager.Instance.RegisterBlock(this.transform);
             isGrounded = true;
             if (isFirstBlock)
             {
@@ -147,4 +152,3 @@ public class Building_Movement : MonoBehaviour
         }
     }
 }
-
