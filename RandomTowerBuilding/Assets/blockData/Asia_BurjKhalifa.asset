@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BurjKhalifa
   blockName: "\uBD80\uB974\uC988 \uCE7C\uB9AC\uD30C"
-  height: 2.7
+  height: 3
   width: 1
   density: 2
   gravityPower: 1

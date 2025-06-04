@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: GrandMosqueMecca
   blockName: "\uADF8\uB79C\uB4DC\uBAA8\uC2A4\uD06C \uBA54\uCE74\t"
-  height: 2.2
-  width: 2.2
+  height: 2.6
+  width: 2.6
   density: 1.7
   gravityPower: 1
   prefab: {fileID: 8538899370132111087, guid: 868846b694fec8247b0507d0a7a7d51b, type: 3}

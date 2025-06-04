@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Colosseum
   blockName: "\uCF5C\uB85C\uC138\uC6C0"
-  height: 2
-  width: 2.3
+  height: 2.4
+  width: 2.8
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: ec5c53767da85de4e8e2a1eb8efc924c, type: 3}

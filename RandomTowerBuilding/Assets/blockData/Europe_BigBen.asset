@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BigBen
   blockName: "\uBE45\uBCA4"
-  height: 2
-  width: 2.5
+  height: 2.4
+  width: 2.8
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 8d40989e681c8da4581d8cefc99d9605, type: 3}

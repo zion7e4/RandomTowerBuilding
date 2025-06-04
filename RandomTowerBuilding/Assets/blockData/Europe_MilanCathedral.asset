@@ -15,7 +15,7 @@ MonoBehaviour:
   id: MilanCathedral
   blockName: "\uBC00\uB77C\uB178 \uB300\uC131\uB2F9"
   height: 2.4
-  width: 2.6
+  width: 2.8
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 6802d0f33cebad94ba709fe4f40beb20, type: 3}

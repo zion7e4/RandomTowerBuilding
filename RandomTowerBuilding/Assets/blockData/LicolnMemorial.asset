@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: LicolnMemorial
   blockName: "\uB9C1\uCEE8\uAE30\uB150\uAD00"
-  height: 2.4
-  width: 1.8
+  height: 2
+  width: 1.6
   density: 1.8
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 30041bfe150a01e448fbfc665822401a, type: 3}

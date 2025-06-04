@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: SoumayaMuseum
   blockName: "\uC18C\uC6B0\uB9C8\uC57C \uBBF8\uC220\uAD00"
-  height: 1.5
-  width: 1.3
+  height: 1.8
+  width: 1.5
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 10b6954c461db03459257f7004ebbf07, type: 3}

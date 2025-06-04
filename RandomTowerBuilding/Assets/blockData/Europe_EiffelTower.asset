@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: EiffelTower
   blockName: "\uC5D0\uD3A0\uD0D1"
-  height: 2
-  width: 2.4
+  height: 2.4
+  width: 2.8
   density: 2
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: 8e7b01d1a980e454daf413903750dc94, type: 3}

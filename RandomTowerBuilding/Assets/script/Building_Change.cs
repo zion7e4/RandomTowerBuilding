@@ -31,6 +31,7 @@ public class Building_Change : MonoBehaviour
     private void Start()
     {
         SpawnNewBlock();
+        remainingSwaps = 2;
     }
 
     private void Update()

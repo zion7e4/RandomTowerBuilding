@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ArcDeTriomphe
   blockName: "\uAC1C\uC120\uBB38"
-  height: 1.6
-  width: 1.6
+  height: 2
+  width: 2
   density: 2.1
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: f293acfb5c56a9345906e71bf10ae57e, type: 3}

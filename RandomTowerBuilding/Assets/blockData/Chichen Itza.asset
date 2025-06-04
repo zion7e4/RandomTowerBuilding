@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Chichen Itza
   blockName: "\uCE58\uCCB8 \uC774\uD2B8\uC0AC"
-  height: 1.5
-  width: 1.5
+  height: 2.2
+  width: 2.2
   density: 1.8
   gravityPower: 1
   prefab: {fileID: 8080510457393124816, guid: f72b3fc7ab1b17845a51847b4d126006, type: 3}
