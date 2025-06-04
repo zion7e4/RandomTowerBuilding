@@ -33,7 +33,7 @@ public class EarthquakeManager : MonoBehaviour
 
     void Update()
     {
-        if (!earthquakeTriggered && (building_Change.blockcount >= 10 || building_Change.currentHeight >= 10f))
+        if (!earthquakeTriggered && (building_Change.blockcount >= 7 || building_Change.currentHeight >= 7f))
         {
             earthquakeTriggered = true;
             StartCoroutine(TriggerEarthquake());
